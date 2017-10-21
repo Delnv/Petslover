@@ -1,0 +1,1340 @@
+/* height:100vh  no html,body,geral e conteudo significa que viewport height (vh)= 100% da altura da tela, 
+ sem deixar o footer no meio da pag. como acontecia qdo a tela tem uma altura maior do que 
+ o conteudo da pag, principalmente no recuperar senha */
+
+body{
+    font-family: helvetica,sans-serif;
+    background: url(../img/fundo1.jpg) fixed no-repeat;
+    background-position: center center;
+    //background-size:cover;
+    padding-top:0px;
+    padding-bottom:0px;
+    margin:0;
+    //margin-top: 160px;
+    font-size: 62.5%;
+ }
+
+.geral{
+   max-width: 1349px;
+   min-height: 850px;
+   padding-left: 1.48258%;  /* 20px / 1349px */
+   padding-right: 1.48258%; /* 20px / 1349px */
+   padding-top: 0.07412898%; /* 1px / 1349px */
+   padding-bottom: 0.7412898%; /* 10px / 1349px */
+   border: 0px solid #87cefa;
+   border-radius: 0px;
+   font-size: 1.3em;
+   margin: auto; 
+ }
+
+/* ----- Header -------*/
+ #header{
+  height: 157px;
+  background-color: #6495ED;
+  border-bottom:3px solid #B0E0E6;
+  position: relative;
+  width: 100%;
+}
+#headertable{
+  width: 96.36768%; /* 1300px / 1349px */
+  height: 90px;
+  padding-right:0px;
+ }
+#headernav{
+  //width: 740px;
+  margin: auto;
+  background-color: #6495ED;
+  padding-right:0px;
+}
+#headernav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-right: 70px;
+}
+#headernav ul li a{
+  font-size: 1.4em;
+  color: white;
+  text-decoration: none;
+}
+#headernav ul li a:hover{
+  color: #B0E0E6;
+}
+
+/*-------- Footer ----------*/
+#footer{
+  height: 130px;
+  margin: auto;
+  background-color: #6495ED;
+  border-top:3px solid #B0E0E6;
+  position:relative;
+  width: 100%;
+}
+#footernav{
+  width: 100%; /*1050px / 1128px */
+  margin: auto;
+  background-color: #6495ED;
+  padding-right:0px;
+}
+
+footer nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin-right: 70px;
+    //margin-top:21px;
+}
+footer nav ul li a{
+  font-size: 1.4em;
+  color: white;
+  text-decoration: none;
+}
+footer nav ul li a:hover{
+  color: #B0E0E6;
+}
+/* ------------------------------- */
+
+
+
+/* Utilizado em mensagem.php: caixa de msgs; */
+#mens-group{
+    text-align: justify;
+}
+
+.mens{
+    text-decoration: none;
+    color: #000;
+}
+.mens-itself{
+    border: ridge;
+    text-align:left;
+}
+.mens-itself:hover{
+    background-color: aliceblue;
+}
+/* ----------------------------------- */
+
+/*--------------------- Divs --------------------------------- */
+/* --- Div utilizada na pag. Pet nos botoes */
+#escond{
+    text-align: center;
+    color:#20B2AA;
+}
+/* ---------------------------- */
+
+
+/* utilizada dentro da div geral: Pag. pet, index, cadastro, contato, quem somos, perguntas,galeria,acordo */
+.conteudo{
+  width:97.25722758%; /* 1312px / 1349px*/
+  margin: auto; 
+  padding-left: 3.429878%; /* 45 / 1312 */
+ }
+/* ----------------------- */
+
+/* --- 2 divs utilizadas lado a lado nas Pag. Pet,  Galeria , index, cadastro, contato, quem somos*/
+.divdir{
+  max-width: 45.73170732%; /* 42.25321% 570px / 1312px */
+  float: right;
+  margin-right: 2.286585%; /* 30px / 1312px */
+  //border:1px solid blue;
+  }
+  .divesq{
+   max-width:  45.73170732%;/* 42.25321%; 570px / 1312px */
+   float: left;
+   margin-left: 2.286585%; /* 30px / 1312px */
+   //border:1px solid blue;
+  } 
+ .divesq:last-child {
+    margin-right: 0;
+ }
+
+  
+
+
+/* ----------------------- */
+
+
+/* ---- Div Verificacao de dados do login*/
+#hidden{
+  color:#8b0000;font-size:1.2em;font-weight:bold;
+}
+/* ------------------------------------- */
+
+/* ---- Div com conteudo do login*/
+.divlogin{
+    height:100px;
+   }
+/* ------------------------------------- */
+
+/* ---- Div com os botoes da pag. index*/
+.divdoar{
+  margin-top: 15%;
+  padding-right: 4.192073%; /*55 / 1312 */
+}
+
+/* ----------------- Fim Divs --------------------------- */
+
+/* ---------Fonte  e lables----------*/
+
+/* utilizado na label do paragrafo de msg ao usuario na pag. Pet*/
+.aviso{
+  color:#DC143C;
+  font-size: 1.5em;
+  line-height: 140%;
+}
+
+#cor{
+  color:black;
+  font-size:1.3em;
+}
+/* utilizado nos radios buttons de forms pags. cadastro, galeria*/
+.cor{
+    color:black;
+    font-size:1.3em;
+}
+
+label.campos{ /* em todos os forms */
+  color:#708090;padding: 14px 19px;font-size: 1.3em;
+}
+/* na tabela dos dados dos pets na pag. pet */
+label.pets{
+  color:#778899;
+  font-weight: 400;
+}
+
+label.asterisco{ /* cadastro */
+  font-weight:bold;font-size:1.8em;color: #708090;
+}
+
+ /* label usada no outras informacoes cadastro  */
+  label.info{
+   font-size:1.0em;color:#808080;padding: 14px 19px;
+ 
+  }
+
+/*cor fonte input  */
+#corInput{
+   color:black;
+}
+/* ------------Fim Fonte  e lables ------------- */
+
+/* formulario da pag. login */
+#login{
+  //width:400px;
+  height:85px;
+  //margin:auto;
+}
+/*------------------------*/
+
+/* ------------------------ Botoes --------------------------------*/
+
+/* pag index  quero adotar / quero doar */
+ #doar{
+    border-radius:1px;
+    font-weight:bold;
+    height: 50px; 
+    width:300px;
+    font-size:2.2em;
+    text-align: center;
+    background-color: #5953DD;
+    border: 0px solid #FFFFFF;
+    margin: 4px 2px;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+}
+#doar:active {
+   box-shadow: 0 6px;
+   transform: translateY(10px);
+}
+#doar:hover{
+    color:black;
+    transform:rotatey(11deg);
+    transition-duration:0.4s;
+    background-color: white;
+    border: 2px solid #5953DD;
+}
+#adotar{
+    border-radius:1px;
+    font-weight:bold;
+    height: 50px; 
+    width:300px;
+    font-size:2.2em;
+    text-align: center;
+    background-color: #18B01C;
+    border: 0px solid #FFFFFF;
+    margin: 4px 2px;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+}
+#adotar:active {
+   box-shadow: 0 6px;
+   transform: translateY(11px);
+}
+#adotar:hover{
+    color:black;
+    transform:rotatey(11deg);
+    transition-duration:0.4s;
+    background-color: white;
+    border: 2px solid #18B01C; 
+}
+
+ /* pags. cadastro, form_recuperar_senha, perfil (alterar dados)*/
+ #btnfarejar{
+    border-radius:2px;
+    font-size:1.4em;
+    font-weight:bold;
+    text-align: center;
+    background-color: #008CBA;
+    border: 2px solid #008CBA;
+    margin: 4px 2px;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    padding:8px;
+    //width:390px;
+    height:50px;
+}
+#btnfarejar:active {
+   box-shadow: 0 8px;
+   transform: translateY(13px);
+}
+#btnfarejar:hover{
+    color:black;
+    transform:rotatey(11deg);
+    transition-duration:0.4s;
+    background-color: white;
+    border: 2px solid #008CBA;
+}
+
+/* pag. contato */
+#bfarejar{
+    border-radius:2px;
+    font-size:1.3em;
+    font-weight:bold;
+    background-color: #87bdd8;
+    border: 2px solid #87bdd8;
+    color:white;
+    display: inline-block;
+    cursor: pointer;
+    padding:10px;
+    width:280px;
+    height:50px;
+}
+#bfarejar:active {
+   box-shadow: 0 8px ;
+   transform: translateY(13px);
+}
+#bfarejar:hover{
+    background-color: white;
+    color:black;
+    transform:rotatey(8deg);
+    transition-duration:0.4s;
+    border: 2px solid #87bdd8;
+}
+
+/* Utilizado nos botoes de login: header e pag. login */
+#btlogin{
+    border-radius:2px;
+    font-weight:bold;
+    background-color:black;/*opacity:0.9;filter:alpha(opacity=50); */
+    border:2px solid black;
+    color:white;
+    display: inline-block;
+    cursor: pointer;
+    font-size:1.3em;
+    width:95px;
+    padding: 13px 17px;
+}
+#btlogin:active {
+    box-shadow: 0 8px;
+   transform: translateY(13px);
+}
+#btlogin:hover{
+  background-color: aliceblue;
+  color: black;
+  transform:rotatey(8deg);
+  transition-duration:0.4s;
+}
+/* nas pags de pretendente classe dos botoes latida e etc */
+.far{
+    border-radius:2px;
+    font-size:1.2em;
+    font-weight:bold;
+    background-color: white;
+    border: 2px solid #7fcdcd;
+    color:black;
+    display: inline-block;
+    cursor: pointer;
+    padding:9px;
+    width:180px;
+    height:50px;
+}
+
+.far:active{
+    //box-shadow: 0 8px #FFC47C;
+    transform: translateY(13px);
+}
+
+.far:hover{
+    background-color: #7fcdcd;
+    color:white;
+    border: 2px solid #7fcdcd;
+    transform:rotatey(8deg);
+    transition-duration:0.4s;
+}
+
+
+/* Botao facebook */
+#face{
+    border-radius:3px;
+    color: black;
+    font-weight:bold;
+    text-decoration: none;
+    background-color:lightblue;
+    font-size:1.3em;
+    padding: 4px;
+}
+#face:hover{
+    color: #6495ed;
+}
+
+
+/* Botao excluir da pag do perfil */
+#btexcluir{
+    border-radius:2px;
+    border:2px solid #DC143C;
+    font-size:1.3em;
+    font-weight:bold;
+    background-color: #DC143C;
+    color:white;
+    display: inline-block;
+    cursor: pointer;
+    padding:9px;
+    margin: 4px 2px;
+    //width:280px;
+    height:50px;
+}
+#btexcluir:active {
+   box-shadow: 0 8px #FFC47C;
+   transform: translateY(13px);
+}
+#btexcluir:hover{
+    border:2px solid #DC143C;
+    color:black;
+    background-color: white;
+    transform:rotatey(8deg);
+    transition-duration:0.4s;
+}
+/* ----------------------------------- */
+
+.btmsg{
+   text-decoration:none;
+   font-size:1.3em;
+   background-color:black;
+   border-radius:2px;
+   color:white;
+   font-weight:bold;
+   padding:5px;
+   height:50px;
+}
+.btmsg:hover{
+  color: #FFC47C;
+}
+/*pag mensagem.php */
+.btsMsgs{
+    border-radius:2px;
+    border: 2px solid #87CEEB;
+    font-weight:bold;
+    background-color:#87CEEB;
+    color:white;
+    display: inline-block;
+    cursor: pointer;
+    font-size:1.3em;
+    padding:6px;
+    height:50px;
+    font-weight:bold;
+}
+.btsMsgs:active {
+   box-shadow: 0 8px #FFC47C;
+   transform: translateY(13px);
+}
+.btsMsgs:hover{
+  color: #87CEEB;
+  background-color: white;
+  border: 2px solid #87CEEB;
+  transform:rotatey(8deg);
+  transition-duration:0.4s;
+}
+
+/* botao pesquisar da pag. Galeria*/
+#scad{
+  border-radius:2px;
+  font-size:1.3em;
+  font-weight:bold;
+  background-color: #2e69a3;
+  border: 1px solid #2e69a3;
+  color:white;
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 10px;
+  width:140px;
+ }
+#scad:hover{
+  background-color: aliceblue;
+  color:black;
+  transform:rotatey(8deg);
+  transition-duration:0.4s;
+  border: 2px solid #87bdd8;
+}
+#scad:active {
+ box-shadow: 0 8px ;
+ transform: translateY(11px);
+}
+/* -------------------------- Fim botoes ------------------------------------ */
+
+/* ----------------------Links-------------------------------------------------- */
+
+/* utilizados nos links: ver mais pretendente , nao tenho cadastro, esqueci senha */
+#cad{
+  font-size: 1.0em;
+  color: white;
+  text-decoration: none;
+}
+#cad:hover{
+  color: #FFC47C;
+}
+
+#senha{
+  font-size: 1.3em;
+  color: white;
+  text-decoration: none;
+}
+#senha:hover{
+  color: #FFC47C;
+}
+
+#link{
+  font-size: 1.0em;
+  color: black;
+  text-decoration: none;
+}
+#link:hover{
+  color: #FFC47C;
+}
+
+#linkPets{
+  color: black;
+  text-decoration: none;
+}
+
+#linkComum{
+    color:black;
+    text-decoration: none;
+}
+#linkComum:hover{
+    color: #FFC47C;
+}
+
+.pet{
+    color:#000080;
+    text-decoration: none;
+    font-size:1.2em;
+}
+.pet:hover{
+    color: #FFC47C;
+}
+/* ---------------------------------- Fim links ---------------------------------- */
+
+/* ----------------------- Paragrafos -------------------------------------------- */
+/* Utilizado na pag. ver_mensagem */
+p.dois{
+    text-align: justify;
+    color:#600000;
+    letter-spacing:1px;
+    font-size:0.8em;
+    line-height: 120%;
+}
+/* Utilizado na pag. index */
+p.index{
+  font-size: 2.1em;
+  line-height:120%;
+  margin-left: 10.594512%; /* 139 /1312 */
+  text-align: left;
+  color:  #5482E1;
+  margin-top: 3%;
+}
+/* utilizados em p de varias pags */
+p.paragrafos{
+  font-size:1.6em;
+  color:black;
+}
+p.perg{ /* paragrafo pag. perguntas*/
+  text-align:justify;
+  padding-left:14.08450704%; /* 190 / 1349 */
+  font-size:1.6em;
+  color:black;
+}
+
+p.muitos{  /* paragrafo pag. quem somos*/
+  font-size:1.3em;
+  color:black;
+  line-height: 170%;
+}
+/* paragrafo e div da area pesquisar da pag. Galeria */
+ .pesquisa{
+   margin:auto;
+   border:1px solid AliceBlue;
+   max-width: 80%;
+   background-color: AliceBlue; 
+ }
+
+
+/* ------------------- Fim Paragrafos ------------------------------- */
+
+/* utilizado para nao redimensionar os texts areas */
+ textarea { resize: none }
+/*--------------------------------------*/ 
+
+/* Table das infos do pretendente escolhido */ 
+.tabPret{
+ /* Border style */
+    //border: 3px solid aliceblue;
+    //-moz-border-radius: 2px;
+    //-webkit-border-radius: 2px;
+     //border-radius: 2px;
+    padding: 7px;
+}
+table td{
+   padding:2px;
+}
+/* --------------------------------------- */
+
+/* utilizados na pag. de perguntas  */
+#todas span{
+   display:none;
+}
+#todas{
+  font-size:1.4em;
+  padding-left: 12.95731707%; /* 170/1312 */
+  line-height:180%;
+}
+.abrirResp{
+   position:relative;
+   top:0;
+
+}
+.abrirResp:hover{
+  top:-4px;box-shadow:0 3px 3px #FFC47C;
+  top:-2px;border-bottom:2px solid #FFC47C;
+  transition: all .2s ease-in-out;
+}
+/* -------------------------------------------------------- */
+
+/* Conteudo dos forms */
+
+textarea,select{
+   width: 390px; 
+   border: 1px solid #A4D3EE;
+  -moz-border-radius: 2px;
+   -webkit-border-radius: 2px;
+   border-radius: 2px;
+   /* Box shadow */
+   -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+    -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+    box-shadow: inset 0 1px 0 0 #A4D3EE;
+    padding: 14px 19px;
+    font-size:1.3em;
+  }
+  input[type=text],input[type=password],input[type=email]{
+    /* Border style */
+
+     border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+  }
+
+ /* inputs do form login*/
+  .inpsize{
+  color:black;font-size:1.2em;width:23%;
+  }
+
+  /* utilizados nos selects da area de pesquisa da pag. Galeria*/
+.selpesquisa{
+  width: 18.2%;
+  font-size: 1.3em;
+  padding: 10px 10px; 
+  }
+ /* -----------------------------------*/
+
+ /* Para diminuir o header */
+ .menuDim{
+   width:100%;
+   background-color: #6495ED;
+  border-bottom:3px solid #B0E0E6;
+    left: 0;
+    right: 0;
+    position:fixed ;
+    top: 0;
+    z-index: 99;
+}
+/* -----------------------------*/
+
+
+/* ---------Para adaptar o site em diferentes telas e aplicar os estilos de CSS para cada uma ------------*/
+
+/*table{display:block; width:auto; overflow-x: auto; white-space: nowrap;} COLOCAR NAS MEDIAS QUERIES*/
+img, figure, video {
+  max-width: 100%;
+}
+
+*, *:before, *:after { /* com isso os elementos terão apenas a altura e a largura determinadas*/
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* adiciona espaco antes e depois dos elementos e evita a aglomeracao dos floats*/
+.clearfix:before,
+.clearfix:after {
+    content: " "; 
+    display: table; 
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+/* ---------------------------- */
+
+/* media 1 */
+ @media only screen and (min-width:1350px){
+   .geral{
+     margin: auto;  
+   } 
+  p.index{
+    margin-left: 15%;
+    margin-top: 5%;
+  }
+  .divdoar{
+    margin-top: 20%;
+  }
+  
+}
+
+ /* media 2 */     
+@media only screen and (min-width:780px) and (max-width: 990px) and (orientation:landscape) {
+   
+   .divesq {
+    min-width: 80%; /*390/768*/
+    margin-bottom: 2.4em;
+    margin-right: 2%;
+    margin-left: 15%;
+    float:left;
+    margin-top: 1%;
+    }
+   .divdir{
+    min-width:80%;
+    margin-right: 5%;
+    margin-left:50%;
+    float:right;
+   }
+   /* figure utilizada na imagem da pag. contato*/ 
+   .fotos{
+      margin-left:0;
+    } 
+   .divdoar{  /* div do botoes doar e adotar da p. index*/
+      float:left;
+      max-width:100%;
+      margin-left: 25%;
+    }
+    #btnfarejar{
+    max-width:100%;
+    }
+    #btexcluir{
+     max-width:100%; 
+    }
+    #bfarejar{
+      min-width:70%;
+    }  
+    .pbotao{
+      width:100%;
+    }
+    /* div form recuperar senha*/
+    .forms{
+      min-width:100%;
+      margin:auto;
+    }
+    .recsenha{
+      max-width:50%;
+    }
+    /* ----------------- */
+    textarea,select{
+    width: 70%; /* 800px / 1312px */
+    border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+    }
+    input[type=text],input[type=password],input[type=email]{
+    /* Border style */
+    width: 70%;
+     border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+    }
+   p.index{
+    padding-left: 4.5%;
+    color:  #5482E1;
+    font-size: 1.8em;
+   }
+
+    /* utilizado no login header*/
+   .logo{
+    width:20%; /* 199/1200*/
+    margin-top:2px;
+    padding-left: 0;
+   }
+   .acesso{
+    width:40%;
+    padding-top: 0;
+   }
+   #btlogin{
+    width:16%;
+    padding: 15px 18px;
+    font-size: 1.1em;
+   }
+   #senha{
+    font-size:1.1em;
+    align:center;
+   }
+   p.llogin{
+    float:left;
+    min-width: 55%;
+   }
+   .inpsize{
+    max-width:25%;
+   }
+   .divlogin{
+    height:100px;
+   }
+    /* area  pesquisar da pag. Galeria*/
+  .pesquisa{
+    float: left;
+    margin-left: 1%;
+    min-width: 100%;
+  }
+  .selpesquisa{
+    min-width: 18%;
+    font-size: 1.2em;
+    padding: 10px 10px;
+    margin-top: 1%; 
+  }
+  #scad{
+    min-width: 37%;
+    margin-top: 3%;
+    margin-left: 0;
+    margin-right: 1%;
+  }
+
+}   
+/* media 3 */
+@media only screen and (min-width:720px) and (max-width:780px) {
+   
+   .divesq {
+    min-width: 80%; /*390/768*/
+    margin-bottom: 2.4em;
+    margin-right: 2%;
+    margin-left: 13%;
+    float:left;
+    margin-top: 0.5%;
+    }
+   .divdir{
+    min-width: 80%;
+    margin-left: 13%;
+    margin-right: 2%;
+    float:left;
+   }
+   /* figure utilizada na imagem da pag. contato*/ 
+   .fotos{
+      margin-left:0;
+    } 
+  .divdoar{  /* div do botoes doar e adotar da p. index*/
+      float:left;
+      max-width:100%;
+      margin-left: 40%;
+      margin-top: 10%;
+    }
+    #btnfarejar{
+    max-width: 50%;
+    align:center;
+    }
+    #btexcluir{
+     min-width:80%; 
+    }
+    #bfarejar{
+      max-width:78%; 
+    }  
+    .pbotao{
+      width:90%;
+    }
+    /* div form recuperar senha*/
+    .forms{
+    min-width:80%;
+    margin:auto;
+    }
+    .recsenha{ /* input do form recuperar senha*/
+      max-width:70%;
+    }
+    /* ------------------*/
+    textarea,select{
+    width: 70%; /* 800px / 1312px */
+    border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+    }
+    input[type=text],input[type=password],input[type=email]{
+    /* Border style */
+    width: 70%;
+     border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+    }
+   p.index{
+    padding-left: 3%;
+    color:  #5482E1;
+    font-size: 1.7em;
+    margin-top: 5%;
+   }
+
+   .logo{
+    width:20%; /* 199/1200*/
+    margin-top:2px;
+    padding-left: 0;
+   }
+   .acesso{
+    width:40%;
+    padding-top: 0;
+   }
+   #btlogin{
+    width:17%;
+    padding: 15px;
+    font-size: 1.1em;
+   }
+   #senha{
+    font-size:1.2em;
+    align:center;
+   }
+   p.llogin{
+    float:left;
+    min-width:69%;
+    text-align: left;
+   }
+   .inpsize{
+    max-width:27%;
+   }
+   .divlogin{
+    height:100px;
+   }
+   /* area  pesquisar da pag. Galeria*/
+  .pesquisa{
+    float: left;
+    margin-left: 17.5%;
+    min-width: 77%;
+  }
+  .selpesquisa{
+    min-width:44%;
+    font-size: 1.2em;
+    padding: 10px 10px;
+    margin-top: 1%; 
+  }
+  #scad{
+    min-width: 90%;
+    margin-top: 3%;
+    margin-left: 0;
+    margin-right: 1.5%;
+  }
+
+}
+
+/* media 4 */
+@media only screen and (min-width: 480px) and (max-width:720px) {
+  
+   .divesq {
+      min-width: 100%; /*390/768*/
+      margin-bottom: 2.4em;
+      margin-left: 0%;
+      float:left;
+      margin-top: 1%;
+    }
+   .divdir{
+    min-width:100%;
+    margin-left:0%;
+    margin-right: 2.8%;
+    float:left;
+    }
+    /* figure utilizada na imagem da pag. contato*/ 
+    .fotos{
+      margin-left:0;
+    } 
+    .divdoar{  /* div do botao doar da p. index*/
+      float:left;
+      max-width:100%;
+      margin-left: 35%;
+      margin-top: 10%;
+    }
+    #btnfarejar{
+     max-width:80%;
+     min-width:50%;
+    }
+    #btexcluir{
+     max-width:80%;
+     min-width:50%;
+    }
+    #bfarejar{
+      min-width:70%;
+    } 
+    
+    .pbotao{
+      min-width:90%;
+    }
+    /*  uso na pag. form recuperar senha*/
+    .forms{
+     min-width:80%;
+     margin:auto;
+
+    }
+    .recsenha{ /* input do form recuperar senha*/
+      max-width:80%;
+    }
+    /*-------------- */
+    textarea,select{
+    width: 70%; /* 800px / 1312px */
+    border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+    }
+    input[type=text],input[type=password],input[type=email]{
+    /* Border style */
+    width: 70%;
+     border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+   }
+   p.index{
+    color:  #5482E1;
+    font-size: 1.7em;
+    margin-left: 3%;
+    margin-top: 5%;
+   }
+   
+    /* utilizado no login header*/
+   .logo{
+    width:20%; /* 199/1200*/
+    margin-top:10px;
+    padding-left: 0;
+   }
+   .acesso{
+    width:40%;
+    padding-top: 0;
+   }
+   #btlogin{
+    width:17%;
+    padding: 15px;
+    font-size: 1.1em;
+   }
+   #senha{
+    font-size:1.1em;
+    align:center;
+   }
+   p.llogin{
+    float:left;
+    min-width:67%;
+   }
+   .inpsize{
+    max-width:27%;
+   }
+   .divlogin{
+    height:100px;
+   }
+   /* area  pesquisar da pag. Galeria*/
+  .pesquisa{
+    float: left;
+    margin-left: 5%;
+    min-width:96%;
+  }
+  .selpesquisa{
+    min-width:44%;
+    font-size: 1.2em;
+    padding: 10px 10px;
+    margin-top: 1%; 
+  }
+  #scad{
+    min-width: 90%;
+    margin-top: 3%;
+    margin-left: 0;
+    margin-right: 1.5%;
+  }
+}
+
+/* media 5 */
+@media screen and (max-width: 480px), (orientation: portrait) {
+
+    .geral{
+      height:auto;
+    }
+    .divesq {
+        min-width: 100%;
+        //margin-right:2.22387%;
+        margin-left: 0;
+        margin-top: 1%;
+    }
+    .divdir{
+      min-width: 100%;
+      float:left;
+      margin-right:2.22387%;
+      margin-top: 1.2%; /* 100px / 1312px */
+    }
+    .divdoar{  /* div do botao doar da p. index*/
+      float:left;
+      max-width:93%;
+      margin-left:10%;
+      margin-top: 10%;
+    }
+    #todas{ /* div perguntas*/
+      float:left;
+      padding-left: 0;
+    }
+    p.paragrafos{
+      padding-left: 3%;
+      margin-left:0%;
+      text-align: justify;
+      float:left;
+    }
+    p.perg{ /* paragrafo pag. perguntas */
+      text-align:left;
+      padding-left:0%;
+      font-size:1.6em;
+      color:black;
+    }
+    p.index{
+    margin-top: 7%;
+    margin-left: 0px;
+    color:  #5482E1;
+    font-size: 1.5em;
+    max-width: 50%;
+   }
+    textarea,select{
+    width: 100%; /* 800px / 1312px */
+    border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+    }
+
+    input[type=text],input[type=password],input[type=email]{
+    /* Border style */
+    width: 100%;
+     border: 1px solid #A4D3EE;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+     /* Box shadow */
+     -moz-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     -webkit-box-shadow: inset 0 1px 0 0 #A4D3EE;
+     box-shadow: inset 0 1px 0 0 #A4D3EE;
+     padding: 14px 19px;
+     font-size:1.3em;
+   }
+   input[type=file]{
+     width:90%;
+     font-size:1.0em;
+   }
+  
+   .forms{ /* div form recuperar senha*/
+     min-width:100%;
+     //float:left;
+     margin: auto;
+     padding-top: 20%;
+   }
+   /* figure utilizada na imagem da pag. contato*/ 
+   .fotos{
+     width:100%;
+     margin:0;
+   }
+   .far{ /* botoes cadastro e login da pag. pet*/ 
+     min-width: 30%;
+   }
+   
+   #btnfarejar{
+    width:100%;
+   }
+   #btexcluir{
+    width:100%;
+   }
+   #bfarejar{ /* botao da p. contato*/
+    min-width:100%;
+    max-width:100%;
+   }
+   .pbotao{ /* div para botao contato */
+    min-width:100%;
+    max-width:100%;
+   }
+   #adotar{
+    max-width: 90%;
+    height:50px;
+    font-size: 1.9em;
+   }
+   #doar{
+    max-width: 90%;
+    height:50px;
+    font-size:1.9em;
+   }
+   /* div para a pag dos termos */
+   .acordo{
+    min-width:100%;
+    float:left;
+    padding-left:5%;
+    padding-right:5%;
+   }
+
+   label.campos{
+    padding:0 0;
+   }
+  /* label usada no outras informacoes cadastro  */
+   label.info{
+    font-size:1.0em;
+    color:#808080;
+    padding: 0px 0px;
+   }
+  footer nav ul li a{
+   font-size: 1.8em;
+   color: white;
+   text-decoration: none;
+  }
+    /* utilizado no login header*/
+   .logo{
+    width:25%; /* 199/1200*/
+    margin-top:16px;
+    padding-left: 0;
+    }
+   .acesso{
+    width:40%;
+    padding-top: 0;
+    padding-right: 0%;
+   }
+   #btlogin{
+    max-width:21%;
+    padding: 15px 4px;
+    font-size: 0.9em;
+
+   }
+   #senha{
+    font-size:1.25em;
+   }
+   p.llogin{
+    float:left;
+    min-width:100%;
+    max-width:90%;
+    text-align: center;
+   }
+   .inpsize{
+    max-width:37%;
+    font-size: 1.0em;
+    padding: 0px 0px;
+   }
+   .divlogin{
+    height:100px;
+    width:100%;
+   }
+   #header{
+    height:170px;
+   }
+   #headernav ul li{
+    margin-right: 30px;
+  }
+   #headernav nav ul li a{
+    font-size: 1.8em;
+    color: white;
+    text-decoration: none;
+  }
+ /* area  pesquisar da pag. Galeria*/
+  .pesquisa{
+    float: left;
+    margin-left: 5%;
+    min-width:96%;
+    
+  }
+  .selpesquisa{
+    min-width:44%;
+    font-size: 1.2em;
+    padding: 10px 10px;
+    margin-top: 1%; 
+  }
+  #scad{
+    min-width: 90%;
+    margin-top: 3%;
+    margin-left: 0;
+    margin-right: 1.5%;
+  }
+  .menuDim{
+    font-size: 1.3em;
+  }
+
+}
