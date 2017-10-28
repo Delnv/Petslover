@@ -115,7 +115,7 @@
                                <p align="center"><button type="submit" name="cadastrar" id="btnfarejar" style="min-width:28.96341463%" tabindex="17">Cadastrar</button></p><br> <!-- 400/1312-->
                             
                                <div id="hidden2"></div>
-                            </form>
+                            </form> 
                </div>    
                </div>
                 
