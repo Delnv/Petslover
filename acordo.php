@@ -1,6 +1,6 @@
 <?php
 include("includes/tags_inicio.php");
-include("includes/header.php");
+include("includes/header.php"); 
 ?>
  <section>
   	<div class="geral clearfix" style="background-color:white;opacity:0.94;filter:alpha(opacity=60);border-radius:0px">
