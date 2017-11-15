@@ -11,7 +11,7 @@
                       if (isset($_SESSION['nmUsuario'])) {
                         $cd = $_SESSION['cdUsuario'];
                         $_SESSION['logado'] = 'SIM';
-
+ 
                     ?>
                         
                      <p align="right" style="font-size:1.5em;color:white;font-weight:bold">Olá, <?php echo $_SESSION['nmUsuario']; ?></p>                        
