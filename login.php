@@ -5,7 +5,7 @@
                 <div class="logo" style="float:left;padding-left:4.6%; padding-top:1.5%">
                  <a href="index.php"><img src="img/logo1.PNG" style=""></a>
                 </div> 
-                <div class="acesso" style="float:right;width:74.128984%;padding-top:3px;padding-right: 3%"> <!-- 1000/1349-->
+                <div class="acesso" style="float:right;width:74.128984%;padding-top:3px;padding-right: 3%"> <!-- 1000/1349--> 
                     <?php
                       session_start();
                       if (isset($_SESSION['nmUsuario'])) {
