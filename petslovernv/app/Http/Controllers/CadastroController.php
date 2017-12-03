@@ -33,12 +33,17 @@ class CadastroController extends Controller
 
     //Verificar se esse métodos de cadastro são no controller ou na model
     //Daqui -->
-    public function cadastrarUsuario($nmUsuario, $cdCep, $tipoUsuario = 'doador', $imgUsuario = 'caminho_padrao')
+    public function cadastrarUsuario($nmUsuario, $cdCep, $tipoUsuario = 'doador', 
+    			$imgUsuario = 'nome_padrao')
     {
     	$user = $this->usuario;
     	$user->nmUsuario = $nmUsuario;
     	$user->cdCep = $cdCep;
     	$user->nmTipo = $tipoUsuario;
+
+    	$urlFoto = "C:\wamp64\www\Delnv5\image-server\NovoPets\\";
+    	$imgUsuario = $urlFoto . $imgUsuario;
+
     	$user->imgUsuario = $imgUsuario;
 
     	$cdUsuario = 0;
