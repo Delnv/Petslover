@@ -16,4 +16,14 @@ class Login extends Model
     public $incrementing = false;
     //Declarar a primary key como uma string
     protected $keyType = 'string';
+
+    public function cadastrarLogin($nmEmail, $nmSenha, $cdUsuario)
+    {
+        $this->nmEmail = $nmEmail;
+        $this->nmSenha = $nmSenha;
+        $this->cdUsuario = $cdUsuario;
+        $insert = $this->save();
+        
+        return $insert;
+    }
 }

@@ -31,67 +31,9 @@ class CadastroController extends Controller
     	return view('cadastro');
     }
 
-    //Verificar se esse métodos de cadastro são no controller ou na model
-    //Daqui -->
-    public function cadastrarUsuario($nmUsuario, $cdCep, $tipoUsuario = 'doador', 
-    			$imgUsuario = 'nome_padrao')
-    {
-    	$user = $this->usuario;
-    	$user->nmUsuario = $nmUsuario;
-    	$user->cdCep = $cdCep;
-    	$user->nmTipo = $tipoUsuario;
-
-    	$urlFoto = "C:\wamp64\www\Delnv5\image-server\NovoPets\\";
-    	$imgUsuario = $urlFoto . $imgUsuario;
-
-    	$user->imgUsuario = $imgUsuario;
-
-    	$cdUsuario = 0;
-
-    	if($user->save()){
-
-    		$cdUsuario = $user->cdUsuario;
-
-    	}
-
-    	return $cdUsuario;
-    }
-
-    public function cadastrarLogin($nmEmail, $nmSenha, $cdUsuario)
-    {
-    	$credenciais = $this->login;
-    	$credenciais->nmEmail = $nmEmail;
-    	$credenciais->nmSenha = $nmSenha;
-    	$credenciais->cdUsuario = $cdUsuario;
-    	$insert = $credenciais->save();
-    	
-    	return $insert;
-    }
-
-    public function cadastrarPet($nmPet, $nmTipoPet, $icSexoPet, $nmPortePet, 
-    								$nmFaixaEtariaPet, $descPet, $cdUsuario)
-    {
-    	$pet = $this->pet;
-    	$pet->nmPet = $nmPet;
-    	$pet->nmTipoPet = $nmTipoPet;
-    	$pet->icSexoPet = $icSexoPet;
-    	$pet->nmPortePet = $nmPortePet;
-    	$pet->nmFaixaEtariaPet = $nmFaixaEtariaPet;
-    	$pet->descPet = $descPet;
-    	$pet->cdUsuario = $cdUsuario;
-
-    	$cdPet = 0;
-    	
-    	if($pet->save()){
-    		$cdPet = $pet->cdPet;
-    	}
-
-    	return $cdPet;
-    }
-    //<-- Até aqui
-
     public function cadastrar(){
 
+        //Utilizar o request
     	//Receber dados via POST
     	$nmUsuario = $_POST['nmUsuario'];
     	$cdCep = $_POST['cdCep'];
@@ -111,7 +53,9 @@ class CadastroController extends Controller
    		* Tratar a imagem - validações - e - nome aleatorio, junto com o caminho
    		* Direcionar o arquivo de imagem para uma pasta (a verificar)
    		*/
-    	$cdUsuario = $this->cadastrarUsuario($nmUsuario, $cdCep, 'doador');
+
+        $user = $this->usuario;
+    	$cdUsuario = $user->cadastrarUsuario($nmUsuario, $cdCep, 'doador');
 
     	if($cdUsuario == 0){
     		
@@ -119,9 +63,11 @@ class CadastroController extends Controller
 
     	}
 
-    	$login = $this->cadastrarLogin($nmEmail, $nmSenha, $cdUsuario);
+        $login = $this->login;
+    	$login = $login->cadastrarLogin($nmEmail, $nmSenha, $cdUsuario);
 
-    	$cdPet = $this->cadastrarPet($nmPet, $nmTipoPet, $icSexoPet, $nmPortePet, 
+        $pet = $this->pet;
+    	$cdPet = $pet->cadastrarPet($nmPet, $nmTipoPet, $icSexoPet, $nmPortePet, 
     						$nmFaixaEtariaPet, $descPet, $cdUsuario);
 
     	if($login == TRUE and $cdPet != 0){
