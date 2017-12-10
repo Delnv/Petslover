@@ -76,9 +76,18 @@
                     @endif
                 </div>
             @endif
-
             <div class="content">
                 <div class="title m-b-md">
+                <div>
+                <form action="/logar" method="post">
+                    {{csrf_field()}}
+                    <label style="font-size: 20px;">E-mail:</label>
+                    <input type="email" name="nmEmail">
+                    <label style="font-size: 20px;">Senha:</label>
+                    <input type="password" name="nmSenha">
+                    <input type="submit" name="Entrar">
+                </form>
+            </div>
                     Laravel
                 </div>
 

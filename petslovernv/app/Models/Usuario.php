@@ -34,4 +34,12 @@ class Usuario extends Model
 
     	return $cdUsuario;
     }
+
+    public function selecionarUsuario($cdUsuario)
+    {
+        //Alimenta um array com os dados do usuário
+        $usuario = self::where('cdUsuario', $cdUsuario);
+
+        return $usuario;
+    }
 }

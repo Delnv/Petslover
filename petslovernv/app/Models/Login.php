@@ -26,4 +26,26 @@ class Login extends Model
         
         return $insert;
     }
+
+    public function logar($nmEmail, $nmSenha)
+    {
+        //Quando o registro existe, retorna um array contendo 
+        //o nome da coluna e o valor.
+        $cdUsuario = self::select('cdUsuario')
+                            ->where('nmEmail', '=', $nmEmail)
+                            ->where('nmSenha', '=', $nmSenha)
+                            ->get();
+
+        if(count($cdUsuario) != 0){
+
+            $cdUsuario = $cdUsuario[0]->cdUsuario;
+
+        }else{
+
+            $cdUsuario = 0;
+            
+        }
+
+        return $cdUsuario;
+    }
 }
