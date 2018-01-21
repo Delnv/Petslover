@@ -33,9 +33,12 @@ class Pet extends Model
     	return $cdPet;
     }
 
-    public function pesquisarPet($nmTipoPet, $icSexoPet, $nmFaixaEtariaPet, $nmPortePet)
+    public function listarPets()
+    {}
+
+    /**public function pesquisarPet($nmTipoPet, $icSexoPet, $nmFaixaEtariaPet, $nmPortePet)
     {
-        //Verificar se é nessecario fazer mais de um
+        //Verificar se é necessário fazer mais de um
         $pet = self::when($nmTipoPet && $icSexoPet && $nmFaixaEtariaPet && $nmPortePet, 
             function ($query) use ($nmTipoPet, $icSexoPet, $nmFaixaEtariaPet, $nmPortePet){
 
@@ -46,5 +49,5 @@ class Pet extends Model
                     ->where('nmFaixaEtariaPet', $nmFaixaEtariaPet)
                     ->where('nmPortePet', $nmPortePet)
                     ->get();
-    }
+    }*/
 }

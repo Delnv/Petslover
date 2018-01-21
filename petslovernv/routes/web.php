@@ -18,3 +18,5 @@ Route::get('/cadastrar', 'CadastroController@index');
 Route::post('/cadastrar/usuario', 'CadastroController@cadastrar');
 
 Route::post('/logar', 'LoginController@index');
+
+Route::get('/galeria', 'GaleriaController@index');

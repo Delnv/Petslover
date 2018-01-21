@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h3>Cadastro de doador</h3>
-	<form method="POST" action="/cadastrar/usuario">
+	<form method="POST" action="/cadastrar/usuario" enctype="multipart/form-data">
 		{{csrf_field()}}
 		<label>Nome do doador</label>
 		<input type="text" name="nmUsuario">
@@ -40,6 +40,9 @@
 		<label>Descrição</label>
 		<textarea name="descPet">
 		</textarea>
+		<br>
+		<label>Foto:</label>
+		<input type="file" name="file">
 		<br>
 		<input type="submit" name="Cadastrar">
 	</form>

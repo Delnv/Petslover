@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\Models\Login;
 use App\Models\Pet;
+use App\Models\ImagemPet;
 
 class CadastroController extends Controller
 {
@@ -18,12 +19,14 @@ class CadastroController extends Controller
     private $usuario;
     private $login;
     private $pet;
+    private $imgPet;
 
-    public function __construct(Usuario $usuario, Login $login, Pet $pet)
+    public function __construct(Usuario $usuario, Login $login, Pet $pet, ImagemPet $imgPet)
     {
     	$this->usuario = $usuario;
     	$this->login = $login;
     	$this->pet = $pet;
+        $this->imgPet = $imgPet;
     }
 
     public function index(){
@@ -70,7 +73,12 @@ class CadastroController extends Controller
     	$cdPet = $pet->cadastrarPet($nmPet, $nmTipoPet, $icSexoPet, $nmPortePet, 
     						$nmFaixaEtariaPet, $descPet, $cdUsuario);
 
-    	if($login == TRUE and $cdPet != 0){
+        $imgPet = $this->imgPet;                    //O nome está somente para teste
+        $imgPet = $imgPet->cadastrarImagem($cdPet, 'nome_padrao');
+
+        // O ideal seria abrir uma transação e confirma-la caso nao houver nenhum erro
+        // Caso contrario dar rollback
+    	if($login == TRUE and $cdPet != 0 and $imgPet == TRUE){
 
     		return "Cadastro efetuado com sucesso!";
 
@@ -79,5 +87,11 @@ class CadastroController extends Controller
     		return "Não foi possível completar o seu cadastro.";
 
     	}
+    }
+
+    //Metodo para fazer o upload de imagens e tratar e enviar os arrays com os nomes das imgs
+    private function upload()
+    {
+
     }
 }

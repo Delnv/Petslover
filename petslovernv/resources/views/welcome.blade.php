@@ -93,7 +93,7 @@
 
                 <div class="links">
                     <a href="/cadastrar">Cadastrar Doador</a>
-                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="/galeria">Galeria</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
