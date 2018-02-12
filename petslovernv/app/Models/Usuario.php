@@ -16,8 +16,8 @@ class Usuario extends Model
     public function cadastrarUsuario($nmUsuario, $cdCep, $tipoUsuario, $imgUsuario = 'nome_padrao')
     {
 
-    	$urlFoto = "C:\wamp64\www\Delnv5\image-server\NovoPets\\";
-    	$imgUsuario = $urlFoto . $imgUsuario;
+    	$destinationPath = public_path() . 'image/user_photo';
+    	$imgUsuario = 'image/user_photo' . $imgUsuario;
 
     	$cdUsuario = 0;
 
@@ -37,8 +37,11 @@ class Usuario extends Model
 
     public function selecionarUsuario($cdUsuario)
     {
-        //Alimenta um array com os dados do usuário
-        $usuario = self::where('cdUsuario', $cdUsuario);
+        /**
+            Alimenta um array com os dados do usuário
+            de acordo com o codigo recebido.
+        */
+        $usuario = self::where('cdUsuario', $cdUsuario)->first();
 
         return $usuario;
     }

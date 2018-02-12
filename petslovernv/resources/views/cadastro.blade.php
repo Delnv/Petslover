@@ -42,7 +42,12 @@
 		</textarea>
 		<br>
 		<label>Foto:</label>
-		<input type="file" name="file">
+		<br>
+		<input type="file" name="userFile[]">
+		<br>
+		<input type="file" name="userFile[]">
+		<br>
+		<input type="file" name="userFile[]">
 		<br>
 		<input type="submit" name="Cadastrar">
 	</form>

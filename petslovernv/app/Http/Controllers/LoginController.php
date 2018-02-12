@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Login;
+use App\Models\Usuario;
 
 class LoginController extends Controller
 {
     //
 
-    public function index()
+    public function index(Request $request, Usuario $user)
     {
     	$login = new Login;
 
@@ -22,6 +23,10 @@ class LoginController extends Controller
     		return "Usuário ou senha incorretos.";
     	}
 
-    	return $cdUsuario;
+        $usuario = $user->selecionarUsuario($cdUsuario);
+
+        $request->session()->put('usuario', $usuario);
+
+    	return redirect('/perfil');
     }
 }

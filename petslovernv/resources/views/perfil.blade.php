@@ -78,17 +78,19 @@
             @endif-->
             <div class="content">
                 <div class="title m-b-md">
+                    Bem vindo!
                 <div>
-                <form action="/logar" method="post">
-                    {{csrf_field()}}
-                    <label style="font-size: 20px;">E-mail:</label>
-                    <input type="email" name="nmEmail">
-                    <label style="font-size: 20px;">Senha:</label>
-                    <input type="password" name="nmSenha">
-                    <input type="submit" name="Entrar">
-                </form>
-            </div>
-                    Laravel
+                <div>
+                    <a href="#{{$usuario->cdUsuario}}">
+                        <img src="{{ asset($usuario->imgUsuario) }}" width="150px" height="150px">
+                    </a>
+                </div>
+                <div style="font-size: 25px">
+                    {{ $usuario->nmUsuario }}
+                </div>
+                <div style="font-size: 25px">{{ $usuario->nmTipo }}</div>
+                <div style="font-size: 25px">{{ $usuario->cdCep }}</div>
+            </div>        
                 </div>
 
                 <div class="links">

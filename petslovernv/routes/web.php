@@ -13,6 +13,10 @@
 
 Route::get('/', 'SiteController@index');
 
+Route::get('/teste', 'SiteController@teste');
+
+Route::post('/testeup', 'SiteController@testeUpload');
+
 Route::get('/cadastrar', 'CadastroController@index');
 
 Route::post('/cadastrar/usuario', 'CadastroController@cadastrar');
@@ -20,3 +24,5 @@ Route::post('/cadastrar/usuario', 'CadastroController@cadastrar');
 Route::post('/logar', 'LoginController@index');
 
 Route::get('/galeria', 'GaleriaController@index');
+
+Route::get('/perfil', 'PerfilController@index');

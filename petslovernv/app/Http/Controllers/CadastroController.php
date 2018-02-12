@@ -34,7 +34,7 @@ class CadastroController extends Controller
     	return view('cadastro');
     }
 
-    public function cadastrar(){
+    public function cadastrar(Request $request){
 
         //Utilizar o request
     	//Receber dados via POST
@@ -49,6 +49,13 @@ class CadastroController extends Controller
     	$nmPortePet = $_POST['portePet'];
     	$nmFaixaEtariaPet = $_POST['faixaEtaria'];
     	$descPet = $_POST['descPet'];
+
+        //Necessário ainda retornar ao usuário quando o arquivo é inválido.
+        $fileNames = '';
+        if($request->hasFile('userFile')){
+            $userFile = $request->file('userFile');
+            $fileNames = self::upload($userFile);
+        }
 
     	//Acrescentar os outros atributos
     	/*
@@ -73,12 +80,12 @@ class CadastroController extends Controller
     	$cdPet = $pet->cadastrarPet($nmPet, $nmTipoPet, $icSexoPet, $nmPortePet, 
     						$nmFaixaEtariaPet, $descPet, $cdUsuario);
 
-        $imgPet = $this->imgPet;                    //O nome está somente para teste
-        $imgPet = $imgPet->cadastrarImagem($cdPet, 'nome_padrao');
+        if($fileNames != false){
+            $imgPet = $this->imgPet;     
+            $imgPet->cadastrarImagem($cdPet, $fileNames);
+        }
 
-        // O ideal seria abrir uma transação e confirma-la caso nao houver nenhum erro
-        // Caso contrario dar rollback
-    	if($login == TRUE and $cdPet != 0 and $imgPet == TRUE){
+    	if($login == TRUE and $cdPet != 0){
 
     		return "Cadastro efetuado com sucesso!";
 
@@ -89,9 +96,31 @@ class CadastroController extends Controller
     	}
     }
 
-    //Metodo para fazer o upload de imagens e tratar e enviar os arrays com os nomes das imgs
-    private function upload()
+    //Metodo para fazer o upload de imagens, tratar e enviar os arrays com os nomes das imgs
+    //Verificar posteriormente a necessidade de gravar o nome junto com o caminho.
+    private function upload($files)
     {
+        $destinationPath = public_path() . '/image/pet_photo';
+        $count = 0;
+        $fileNames = array();
 
+        /* Verifica se o tipo mime do arquivo é de imagem.
+            Gera um nome aleatorio para a imagem com base no nome original
+            e move o arquivo para a pasta.
+            Coloca os nomes gerados em um array que será retornado.
+        */
+        foreach($files as $file){
+            //Codificar para que este tipo de verificação ocorra também por meio de jquery
+            if($file->getMimeType() == 'image/png' or $file->getMimeType() == 'image/jpeg'){
+                $filename = sha1($file->getClientOriginalName()).date('Y-m-d-h-i-s').'.'.$file->guessExtension();
+                $file->move($destinationPath, $filename);
+                $fileNames[$count] = 'image/pet/'.$filename;
+                $count++;
+            }else{
+                return false;
+            }
+        }
+
+        return $fileNames;
     }
 }
