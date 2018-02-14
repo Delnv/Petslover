@@ -33,9 +33,6 @@ class Pet extends Model
     	return $cdPet;
     }
 
-    public function listarPets()
-    {}
-
     /**public function pesquisarPet($nmTipoPet, $icSexoPet, $nmFaixaEtariaPet, $nmPortePet)
     {
         //Verificar se é necessário fazer mais de um
@@ -50,4 +47,15 @@ class Pet extends Model
                     ->where('nmPortePet', $nmPortePet)
                     ->get();
     }*/
+
+    /**
+        Retorna todos os dados do PET de acordo com o 
+        código enviado.
+    */
+    public function selecionarPet($cdPet)
+    {
+        $pet = self::where('cdPet', $cdPet)->first();
+
+        return $pet;
+    }
 }

@@ -26,3 +26,5 @@ Route::post('/logar', 'LoginController@index');
 Route::get('/galeria', 'GaleriaController@index');
 
 Route::get('/perfil', 'PerfilController@index');
+
+Route::get('/perfil-cao/{cdPet}', ['uses' => 'GaleriaController@show']);

@@ -6,12 +6,11 @@
 <body>
 <h1>Galeria</h1>
 <table>
-Aqui fica a galeria</br>
 @if (count($imgsPet) != 0)
 	@foreach($imgsPet as $img)
 		<tr>
 			<td>
-				<a href='#{{ $img->cdPet }}'><img src="{{ asset($img->nmImgPet) }}"></a>
+				<a href='/perfil-cao/{{ $img->cdPet }}'><img src="{{ asset($img->nmImgPet) }}"></a>
 			</td>
 		</tr>
 	@endforeach
