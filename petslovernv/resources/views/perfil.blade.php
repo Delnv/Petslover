@@ -99,6 +99,10 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <form method="post" action="/logout">
+                        {{csrf_field()}}
+                        <button type="submit" name="logout">Sair</button>
+                    </form>
                 </div>
             </div>
         </div>

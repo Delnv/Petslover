@@ -14,8 +14,8 @@ class LoginController extends Controller
     {
     	$login = new Login;
 
-    	$nmEmail = $_POST['nmEmail'];
-    	$nmSenha = $_POST['nmSenha'];
+    	$nmEmail = $_POST['email'];
+    	$nmSenha = $_POST['senha'];
 
     	$cdUsuario = $login->logar($nmEmail, $nmSenha);
 

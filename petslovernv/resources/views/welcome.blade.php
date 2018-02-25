@@ -82,9 +82,9 @@
                 <form action="/logar" method="post">
                     {{csrf_field()}}
                     <label style="font-size: 20px;">E-mail:</label>
-                    <input type="email" name="nmEmail">
+                    <input type="email" name="email">
                     <label style="font-size: 20px;">Senha:</label>
-                    <input type="password" name="nmSenha">
+                    <input type="password" name="senha">
                     <input type="submit" name="Entrar">
                 </form>
             </div>

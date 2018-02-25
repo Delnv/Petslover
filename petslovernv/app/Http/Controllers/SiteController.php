@@ -6,29 +6,17 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        //Se já houver um usuário logado vai para a pagina de perfil
+        if($request->session()->has('usuario')){
+            //return redirect('/perfil');
+        }
     	//Enviar para a página principal
-    	return view('welcome');
+    	return view('index');
     }
 
-    public function teste()
-    {
-    	return view('teste');
-    }
-
-    public function testeUpload(Request $request)
-    {
-    	$destinationPath = 'C:\wamp64\www\Delnv5\image-server\NovoPets\pets';
-    	if($request->hasFile('userFile')){
-    		$userFile = $request->file('userFile');
-    		foreach($userFile as $file){
-    			//$filename = $file->getClientOriginalName();
-    			//$file->move($destinationPath, $filename);
-    			echo "Nome: ".$file->getClientOriginalName();
-    			echo "Tipo Mime: ".$file->getMimeType()."<br>";
-    		}
-    	}else{
-    		echo "NOp ";
-    	}
+    //Usar para ir adicionando as paginas do layout principal. Uso para testar
+    public function pginicial(){
+        return view('welcome');
     }
 }

@@ -22,10 +22,14 @@ class PerfilController extends Controller
     	}
 
     	return view('perfil', ['usuario' => $user]);
+        //return view('index', ['usuario' => $user]);
+        //return view('index');
     }
 
     public function logout(Request $request)
     {
     	$request->session()->forget('usuario');
+
+        return redirect('/');
     }
 }

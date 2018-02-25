@@ -13,9 +13,7 @@
 
 Route::get('/', 'SiteController@index');
 
-Route::get('/teste', 'SiteController@teste');
-
-Route::post('/testeup', 'SiteController@testeUpload');
+Route::get('/inicial', 'SiteController@pginicial');
 
 Route::get('/cadastrar', 'CadastroController@index');
 
@@ -28,3 +26,5 @@ Route::get('/galeria', 'GaleriaController@index');
 Route::get('/perfil', 'PerfilController@index');
 
 Route::get('/perfil-cao/{cdPet}', ['uses' => 'GaleriaController@show']);
+
+Route::post('/logout', 'PerfilController@logout');
