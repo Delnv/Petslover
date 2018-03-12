@@ -35,37 +35,42 @@ class CadastroController extends Controller
     }
 
     public function cadastrar(Request $request){
-
-        //Utilizar o request
-    	//Receber dados via POST
-    	$nmUsuario = $_POST['nmUsuario'];
-    	$cdCep = $_POST['cdCep'];
+        
+    	//Recebe os dados via POST
+    	$nmUsuario = $request->input('tnmprot');
+    	$cdCep = $request->input('tcep');
     	//$tipoUsuario = $_POST[''];
-    	$nmEmail = $_POST['nmEmail'];
-    	$nmSenha = $_POST['nmSenha'];
-    	$nmPet = $_POST['mnPet'];
-    	$nmTipoPet = $_POST['tipoPet'];
-    	$icSexoPet = $_POST['sexoPet'];
-    	$nmPortePet = $_POST['portePet'];
-    	$nmFaixaEtariaPet = $_POST['faixaEtaria'];
-    	$descPet = $_POST['descPet'];
+    	$nmEmail = $request->input('temail');
+    	$nmSenha = $request->input('tsenha');
+    	$nmPet = $request->input('tnmpet');
+    	$nmTipoPet = $request->input('tipo');
+    	$icSexoPet = $request->input('sexo');
+    	$nmPortePet = $request->input('selporte');
+    	$nmFaixaEtariaPet = $request->input('dtnasc');
+    	$descPet = $request->input('asobre');
 
-        //Necessário ainda retornar ao usuário quando o arquivo é inválido.
-        $fileNames = '';
+        //Pegar a imagem do usuário
+        $userFileName = NULL;
         if($request->hasFile('userFile')){
             $userFile = $request->file('userFile');
-            $fileNames = self::upload($userFile);
+            $userFileName = self::upload($userFile, '/image/user_photo');
+        }
+
+        //Necessário ainda retornar ao usuário quando o arquivo é inválido.
+        $fileNames = false; //Definido como false temporariamente.
+        if($request->hasFile('petFile')){
+            $petFile = $request->file('petFile');
+            $fileNames = self::upload($petFile);  
         }
 
     	//Acrescentar os outros atributos
     	/*
    		* Tratar o tipo de usuário através da rota
-   		* Tratar a imagem - validações - e - nome aleatorio, junto com o caminho
-   		* Direcionar o arquivo de imagem para uma pasta (a verificar)
+   		* Tratar a imagem 
    		*/
 
         $user = $this->usuario;
-    	$cdUsuario = $user->cadastrarUsuario($nmUsuario, $cdCep, 'doador');
+    	$cdUsuario = $user->cadastrarUsuario($nmUsuario, $cdCep, 'doador', $userFileName);
 
     	if($cdUsuario == 0){
     		
@@ -98,27 +103,33 @@ class CadastroController extends Controller
 
     //Metodo para fazer o upload de imagens, tratar e enviar os arrays com os nomes das imgs
     //Verificar posteriormente a necessidade de gravar o nome junto com o caminho.
-    private function upload($files)
+    //Caso não especificado a pasta para armazenar, será armazenado na pasta do pet.
+    private function upload($files, $pasta = '/image/pet')
     {
-        $destinationPath = public_path() . '/image/pet_photo';
-        $count = 0;
-        $fileNames = array();
+        $destinationPath = public_path() . $pasta;
+        $fileNames = array();     
 
-        /* Verifica se o tipo mime do arquivo é de imagem.
+        /* Verifica o tipo mime do arquivo de imagem.
             Gera um nome aleatorio para a imagem com base no nome original
             e move o arquivo para a pasta.
             Coloca os nomes gerados em um array que será retornado.
         */
-        foreach($files as $file){
+        for($i=0; $i<count($files); $i++){
             //Codificar para que este tipo de verificação ocorra também por meio de jquery
-            if($file->getMimeType() == 'image/png' or $file->getMimeType() == 'image/jpeg'){
-                $filename = sha1($file->getClientOriginalName()).date('Y-m-d-h-i-s').'.'.$file->guessExtension();
-                $file->move($destinationPath, $filename);
-                $fileNames[$count] = 'image/pet/'.$filename;
-                $count++;
+            if($files[$i]->getMimeType() == 'image/png' or $files[$i]->getMimeType() == 'image/jpeg'){
+                $filename = sha1($files[$i]->getClientOriginalName()).date('Y-m-d-h-i-s').'.'.$files[$i]->guessExtension();
+                $files[$i]->move($destinationPath, $filename);
+                $fileNames[$i] = 'image/pet/'.$filename;
             }else{
                 return false;
             }
+        }
+
+        /**
+            Caso seja a foto do usuario, o array seja convertido em string.
+        */
+        if(count($fileNames)==1){
+            $fileNames = implode($fileNames);
         }
 
         return $fileNames;

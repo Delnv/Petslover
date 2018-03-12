@@ -13,18 +13,24 @@ class Usuario extends Model
     //Não usar as colunas gerenciadas pelo Eloquent
     public $timestamps = false;
 
-    public function cadastrarUsuario($nmUsuario, $cdCep, $tipoUsuario, $imgUsuario = 'nome_padrao')
+    public function cadastrarUsuario($nmUsuario, $cdCep, $tipoUsuario, $imgUsuario)
     {
-
-    	$destinationPath = public_path() . 'image/user_photo';
-    	$imgUsuario = 'image/user_photo' . $imgUsuario;
 
     	$cdUsuario = 0;
 
     	$this->nmUsuario = $nmUsuario;
     	$this->cdCep = $cdCep;
     	$this->nmTipo = $tipoUsuario;
-    	$this->imgUsuario = $imgUsuario;
+
+        /**
+            Caso o usuário não insira foto, não será cadastrada no banco.
+            A foto padrão será exibida diretamente da pasta no perfil do 
+            usuário.
+        */
+        if(isset($imgUsuario)){
+            //return $imgUsuario;
+            $this->imgUsuario = $imgUsuario;
+        }
 
     	if($this->save()){
 

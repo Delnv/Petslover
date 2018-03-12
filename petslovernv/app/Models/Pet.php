@@ -58,4 +58,14 @@ class Pet extends Model
 
         return $pet;
     }
+
+    /**
+        Fazer o join para pegar os dados do pet e as imagens
+    */
+    public function listarPets(ImagemPet $imgPet)
+    {
+        $pet = self::join('imagem_pet', 'pet.cdPet', '=', 'imagem_pet.cdPet')
+                        ->get();
+
+    }
 }

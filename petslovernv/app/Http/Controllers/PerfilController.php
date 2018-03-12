@@ -14,6 +14,11 @@ class PerfilController extends Controller
     	if($request->session()->has('usuario')){
 
     		$user = $request->session()->get('usuario');
+            /**
+                Necessário definir a imagem padrão caso não haja
+                imagem do usuário no banco, o mesmo deve ser feito 
+                com o Pet.
+            */
 
     	}else{
 

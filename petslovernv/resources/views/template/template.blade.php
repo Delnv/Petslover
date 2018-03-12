@@ -123,28 +123,16 @@ $(document).ready(function() {
         <nav id="headernav" style="">
           <div align="center">
             <ul>
-                <li>
-                    @if(Session::has('usuario'))
-                        <a href='/perfil'>Principal</a>
-                    @else
-                        <a href='/'>Principal</a>
-                    @endif
-                </li>
-                <li><a href="/galeria">Galeria</a></li>
-                <li><?php
-                    if (!isset($_SESSION['nmUsuario'])) {
-                        echo "<a href='/cadastrar'>Cadastro</a>";
-                    }else{
-			                  echo "<a href='#'>Fale Conosco</a>";
-			              }
-                    ?></li>
-                <li><?php
-                    if (!isset($_SESSION['nmUsuario'])) {
-                        echo "<a href='#'>Fale Conosco</a>";
-                    }else{
-                     echo "<a href=''></a>";
-                    }
-                    ?></li>
+            @if(Session::has('usuario'))
+              <li><a href='/perfil'>Principal</a></li>
+              <li><a href="/galeria">Galeria</a></li>
+              <li><a href='/contato'>Fale Conosco</a></li>
+            @else
+              <li><a href='/'>Principal</a></li>
+              <li><a href="/galeria">Galeria</a></li>
+              <li><a href='/cadastrar'>Cadastro</a></li>
+              <li><a href='/contato'>Fale Conosco</a></li>
+            @endif
             </ul>
 
           </div>
@@ -175,9 +163,9 @@ $(document).ready(function() {
 	  	<nav id="footernav">
 	    	<div align="center">
 	  			<ul>
-	  				<li><a href="quem_somos.php">Quem Somos</a></li>
-	  				<li><a href="acordo.php">Termos de Compromisso</a></li>
-	  				<li><a href="perguntas.php">Perguntas Frequentes</a></li>
+	  				<li><a href="/quem-somos">Quem Somos</a></li>
+	  				<li><a href="/termo-de-uso">Termos de Compromisso</a></li>
+	  				<li><a href="/perguntas-frequentes">Perguntas Frequentes</a></li>
 	  		 	</ul><br>
 	       	<p align="center" style="font-size:1.4em;color:white">&copy; 2016 Pet's Lover - Todos os direitos reservados. </p>
 	       

@@ -17,9 +17,29 @@ class ImagemPet extends Model
     //Está gravando somente a primeira imagem - verificar
     public function cadastrarImagem($cdPet, $imgsPet)
     {        
+        /**
+            Quando o pet não tiver imagem, a imagem padrao do pet
+            não precisa estar gravado no banco. Simplesmente quando
+            o perfil for exibido, ele pega a imagem padrao da pasta 
+            de fotos do pet.
+        */
+        /**
+            É necessário verificar se é uma string, pois quando o 
+            usuário cadastra apenas uma imagem do pet, o valor vem
+            como string.
+        */
+
         $data = array();
-        for($i = 0; $i < count($imgsPet); $i++) {
-            $data[$i] = ['nmImgPet' => $imgsPet[$i], 'cdPet' => $cdPet];
+        if(is_string($imgsPet)){
+
+            $data = ['nmImgPet' => $imgsPet, 'cdPet' => $cdPet];
+
+        }else{
+
+            for($i = 0; $i < count($imgsPet); $i++) {
+                $data[$i] = ['nmImgPet' => $imgsPet[$i], 'cdPet' => $cdPet];
+            }
+
         }
 
         $this->insert($data);

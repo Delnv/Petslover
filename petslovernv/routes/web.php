@@ -27,4 +27,25 @@ Route::get('/perfil', 'PerfilController@index');
 
 Route::get('/perfil-cao/{cdPet}', ['uses' => 'GaleriaController@show']);
 
+Route::get('/galeria2', 'GaleriaController@index');
+
 Route::post('/logout', 'PerfilController@logout');
+
+/**
+ Páginas de visualização
+ */
+Route::get('/contato', function(){
+	return view('contato');
+});
+
+Route::get('/quem-somos', function(){
+	return view('quem_somos');
+});
+
+Route::get('/termo-de-uso', function(){
+	return view('acordo');
+});
+
+Route::get('/perguntas-frequentes', function(){
+	return view('perguntas');
+});
