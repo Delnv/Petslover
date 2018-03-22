@@ -5,7 +5,7 @@
             <div class="geral clearfix" style="">
 
                 <p class="paragrafos" align="center" style="color: #00BFFF "> Cadastre aqui o pet que você está doando </p>
-                <p class="paragrafos" align="center" style="font-size: 1.4em"> Se você quer adotar <a href="cadastro_adotante.php" class="cliques">clique aqui</a> e se cadastre</p>
+                <p class="paragrafos" align="center" style="font-size: 1.4em"> Se você quer adotar <a href="/cadastrar-adotante" class="cliques">clique aqui</a> e se cadastre</p>
                 <div style="clear:both;width:97.25722758%;margin:auto;"></div><br>  
                 
                 <div class="conteudo" style=""> <!-- 45 / 1312-->

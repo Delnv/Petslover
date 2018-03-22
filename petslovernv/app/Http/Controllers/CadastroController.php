@@ -101,6 +101,10 @@ class CadastroController extends Controller
     	}
     }
 
+    public function cadastrarAdotante(){
+        
+    }
+
     //Metodo para fazer o upload de imagens, tratar e enviar os arrays com os nomes das imgs
     //Verificar posteriormente a necessidade de gravar o nome junto com o caminho.
     //Caso não especificado a pasta para armazenar, será armazenado na pasta do pet.
@@ -119,7 +123,7 @@ class CadastroController extends Controller
             if($files[$i]->getMimeType() == 'image/png' or $files[$i]->getMimeType() == 'image/jpeg'){
                 $filename = sha1($files[$i]->getClientOriginalName()).date('Y-m-d-h-i-s').'.'.$files[$i]->guessExtension();
                 $files[$i]->move($destinationPath, $filename);
-                $fileNames[$i] = 'image/pet/'.$filename;
+                $fileNames[$i] = $pasta . $filename;
             }else{
                 return false;
             }

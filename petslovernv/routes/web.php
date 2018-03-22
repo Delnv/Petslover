@@ -49,3 +49,11 @@ Route::get('/termo-de-uso', function(){
 Route::get('/perguntas-frequentes', function(){
 	return view('perguntas');
 });
+
+Route::get('/cadastrar-adotante', function(){
+	return view('cadastro-adotante');
+});
+
+Route::get('/perfil2', function(){
+	return view('perfil2');
+});
