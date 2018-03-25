@@ -49,6 +49,14 @@ class Usuario extends Model
         */
         $usuario = self::where('cdUsuario', $cdUsuario)->first();
 
+        /**
+            Caso o usuário não tenha foto, a foto padrão é passada
+            para o perfil.
+        */
+        if(is_null($usuario['imgUsuario']) OR empty($usuario['imgUsuario'])){
+            $usuario['imgUsuario'] = 'image/user_photo/photo_padrao.png';
+        }
+
         return $usuario;
     }
 }

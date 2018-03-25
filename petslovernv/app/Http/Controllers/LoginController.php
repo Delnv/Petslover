@@ -14,8 +14,8 @@ class LoginController extends Controller
     {
     	$login = new Login;
 
-    	$nmEmail = $_POST['email'];
-    	$nmSenha = $_POST['senha'];
+    	$nmEmail = $request->input('email');
+    	$nmSenha = $request->input('senha');
 
     	$cdUsuario = $login->logar($nmEmail, $nmSenha);
 
@@ -24,6 +24,9 @@ class LoginController extends Controller
     	}
 
         $usuario = $user->selecionarUsuario($cdUsuario);
+
+        //Atribuindo o e-mail à variavel de sessão.
+        $usuario['nmEmail'] = $nmEmail;
 
         $request->session()->put('usuario', $usuario);
 

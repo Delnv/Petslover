@@ -3,22 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pet;
 
 class PerfilController extends Controller
 {
     //
-    public function index(Request $request)
+    public function index(Request $request, Pet $pet)
     {
 
     	//Verificar se existe uma sessão
     	if($request->session()->has('usuario')){
 
     		$user = $request->session()->get('usuario');
+
+            //Pegar os dados do pet
+            $pet = $pet->selecionarPetUsuario($user->cdUsuario);
+            
             /**
-                Necessário definir a imagem padrão caso não haja
-                imagem do usuário no banco, o mesmo deve ser feito 
-                com o Pet.
+                Caso o pet não tenha uma imagem, é definida uma imagem
+                padrão para o pet.    
             */
+            if(is_null($pet['nmImgPet']) OR empty($pet['nmImgPet'])){
+                $pet['nmImgPet'] = 'image/pet/padrao.png';
+            }
 
     	}else{
 
@@ -26,7 +33,8 @@ class PerfilController extends Controller
     		return redirect('/');
     	}
 
-    	return view('perfil', ['usuario' => $user]);
+    	return view('perfil', ['usuario' => $user, 
+                                'pet' => $pet]);
         //return view('index', ['usuario' => $user]);
         //return view('index');
     }

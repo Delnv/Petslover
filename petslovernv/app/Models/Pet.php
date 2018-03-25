@@ -61,11 +61,38 @@ class Pet extends Model
 
     /**
         Fazer o join para pegar os dados do pet e as imagens
+        (Preciso entender pq fiz esse código :S)
     */
     public function listarPets(ImagemPet $imgPet)
     {
         $pet = self::join('imagem_pet', 'pet.cdPet', '=', 'imagem_pet.cdPet')
                         ->get();
+    }
 
+    /**
+        Traz os dados do pet de acordo com o código do usuário
+        (Ver a necessidade dessa função - motivo: não é um dia bom para pensar)
+        Esse código traz os dados do pet e faz um join na tabela de imagens 
+        para trazer também as imagens do(s) pet(s).
+        (Analisar como vai funcionar quando o usuário possuir mais de um pet).
+    */
+    public function selecionarPetUsuario($cdUsuario)
+    {
+        /**
+            É necessário colocar um tratamento para valores nulos no join,
+            pois se um valor for nulo ele não retorna o select, pois é nulo.
+            --Verificar se existe uma maneira de colocar um método 
+            is_null (ex. SQL Server) para caso o valor seja nulo.
+            -- Ou verificar se é possível definir um valor default
+            -- Verificar o Advanced Join Clauses
+        */
+        $pet = self::select('pet.cdPet', 'pet.nmPet', 'pet.nmTipoPet', 'pet.icSexoPet'
+                        , 'pet.nmPortePet', 'pet.nmFaixaEtariaPet', 'pet.descPet'
+                        , 'cdImgPet', 'nmImgPet', 'icMain')
+                        ->join('imagem_pet', 'pet.cdPet', '=', 'imagem_pet.cdPet')
+                        ->where('cdUsuario', '=',$cdUsuario)
+                        ->get();
+
+        return $pet[0];
     }
 }

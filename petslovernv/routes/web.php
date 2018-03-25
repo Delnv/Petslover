@@ -57,3 +57,5 @@ Route::get('/cadastrar-adotante', function(){
 Route::get('/perfil2', function(){
 	return view('perfil2');
 });
+
+#Para testes
