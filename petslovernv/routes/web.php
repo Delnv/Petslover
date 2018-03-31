@@ -32,6 +32,12 @@ Route::get('/galeria2', 'GaleriaController@index');
 Route::post('/logout', 'PerfilController@logout');
 
 /**
+	Verificar uma maneira de chamar os outros métodos de alteração
+	de dados nesta mesma URL
+*/
+Route::post('/editar-perfil', 'PerfilController@alterarDadosLogin');
+
+/**
  Páginas de visualização
  */
 Route::get('/contato', function(){

@@ -1,5 +1,5 @@
 function check(input) {
-    if (input.value != document.getElementById('tsenha').value) {
+    if (input.value != document.getElementById('nsenha').value) {
         input.setCustomValidity('A senha não confere!');
     } else {
         // input is valid -- reset the error message

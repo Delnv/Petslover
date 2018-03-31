@@ -48,4 +48,30 @@ class Login extends Model
 
         return $cdUsuario;
     }
+
+    public function alterarDadosLogin($email, $senha, $novaSenha, $cdUsuario)
+    {
+        /**
+            Alterar a senha do usuário: 
+            Primeiro trazer a senha e comparar com a senha enviada
+            caso a senha confira com o valor enviado, altera a senha.
+        */
+
+        $senhaAtual = self::select('nmSenha')
+                            ->where([
+                                      ['nmEmail', '=', $email],
+                                      ['cdUsuario', '=', $cdUsuario]
+                                    ])
+                            ->first();
+
+        if($senhaAtual==$senha){
+            $senha = self::where([
+                                   ['nmEmail', '=', $email],
+                                   ['cdUsuario', '=', $cdUsuario]
+                                 ])
+                            ->update(['nmSenha' => $novaSenha]);
+        }
+
+        return $senha;
+    }
 }

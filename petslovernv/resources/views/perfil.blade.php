@@ -57,8 +57,8 @@
            </ul><br><br>
           </div>
           <div class="bordaPerfil">
-          <form action="editar_perfil.php" method='POST'  name='perfil' enctype="multipart/form-data" onsubmit="return btCadastrar()">
-         
+          <form action="/editar-perfil" method='POST'  name='perfil' enctype="multipart/form-data" onsubmit="return btCadastrar()">
+          {{csrf_field()}}
           <p>
            <img src="{{asset($usuario->imgUsuario)}}" class="imgsPerfil" id="foto">&nbsp;          
            <label class="campos2" style="padding:0;">{{$usuario->nmUsuario}}</label>
@@ -87,10 +87,11 @@
                 <input type="password"  name="tsenha" size="29" id="tsenha" title="Letras ou números,mínimo 6" pattern="^[a-zA-Zà-úÀ-Ú0-9]+$" maxlength="20" tabindex="5"/><br>
 
                 <label class="campos3">Nova Senha</label><br> 
-                <input type="password" name="tsenha" size="29" id="tsenha" title="Letras ou números,mínimo 6" pattern="^[a-zA-Zà-úÀ-Ú0-9]+$" maxlength="20" tabindex="6"/><br>
+                <input type="password" name="nsenha" size="29" id="nsenha" title="Letras ou números,mínimo 6" pattern="^[a-zA-Zà-úÀ-Ú0-9]+$" maxlength="20" tabindex="6"/><br>
 
                  <label class="campos3">Confirmar Nova Senha</label><br>
-                <input type="password" name="tconfsenha" id="tconfsenha" oninput="check(this)" pattern="^[a-zA-Zà-úÀ-Ú0-9]+$" maxlength="20"  size="29" tabindex="7" /><br><br>
+                 <!-- acrescentar depois o oninput="check(this)" -->
+                <input type="password" name="tconfsenha" id="tconfsenha" pattern="^[a-zA-Zà-úÀ-Ú0-9]+$" maxlength="20"  size="29" tabindex="7" /><br><br>
               </span>
             </div>
 

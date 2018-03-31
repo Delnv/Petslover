@@ -59,4 +59,9 @@ class Usuario extends Model
 
         return $usuario;
     }
+
+    public function alterarDados($cdUsuario = '', $senha)
+    {
+        
+    }
 }

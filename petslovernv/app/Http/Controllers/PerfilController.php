@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pet;
+use App\Models\Usuario;
+use App\Models\Login;
 
 class PerfilController extends Controller
 {
@@ -44,5 +46,41 @@ class PerfilController extends Controller
     	$request->session()->forget('usuario');
 
         return redirect('/');
+    }
+
+    public function alterarDadosUsuario(Request $request)
+    {
+
+    }
+
+    public function alterarDadosLogin()
+    {   
+        $request = new Request();
+        $login = new Login();
+
+        $novo_email = $request->input('');
+        $senhaAtual = $request->input('tsenha');
+        $nova_senha = $request->input('nsenha');
+        
+        if($request->session()->has('usuario')){
+            $usuario = $request->session()->get('usuario');
+        }
+
+        if(!empty($novo_email) && !is_null($novo_email)){
+            # Método para adicionar um novo email a tabela de Login
+            # e atribuir o código do usuário e a senha para este novo e-mail.
+        }
+
+        if(!empty($nova_senha) && !is_null($nova_senha)){
+            # Método para alterar a senha
+
+            $status = $login
+                            ->alterarDadosLogin($usuario->nmEmail, 
+                                                $senhaAtual, 
+                                                $nova_senha, 
+                                                $usuario->cdUsuario);
+
+            echo $status;
+        }
     }
 }
