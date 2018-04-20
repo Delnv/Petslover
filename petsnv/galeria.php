@@ -7,7 +7,7 @@ include("includes/tags_inicio.php");
 <?php include './includes/header.php';?>
   <section>
   	<div class="geral clearfix" style="">
-               
+       <br>        
        <div style="clear:both;width:97.25722758%;">
          <p class="paragrafo" align="center" style="font-size: 1.8em;color: #4169E1"><b>Encontre seu Pet </b></p>
          <div class="pesquisa" align="center" style="">          
@@ -48,11 +48,8 @@ include("includes/tags_inicio.php");
 
     $con = abreConexao();
 
-       // $sql="SELECT cd_pet,nm_pet,nm_raca_pet,dt_nascimento_pet,nm_tipo_pet,ds_pet,ic_sexo_macho_femea FROM PET";
-        //$sql2="SELECT cd_pet,im_pet,cd_imagem_pet from IMAGEM_PET";
     $sql= "SELECT p.cdPet, p.nmPet,p.icSexoPet,p.nmFaixaEtariaPet,i.imgPet1,i.cdImagem FROM PET AS p INNER JOIN IMAGEM_PET AS i ON p.cdPet = i.cdPet ";
 
-        //$result = mysqli_query($con, $sql2);
     $res = mysqli_query($con,$sql);
 
     if ($res==false) {
@@ -63,9 +60,13 @@ include("includes/tags_inicio.php");
 ?>     
     
       <div class='divesq' style='max-width: 31.666667%;margin-left: 1%;'> <!-- 30.487805% 400/1312-->
+       
+       <div class="divGaleria" style="float:left;">
         <a href='pet.php?n=<?php echo $linha->cdPet; ?>' id='linkPets'>
-             
-               <img src='imagem/<?php echo $linha->imgPet1; ?>' style='height: 350px;border:2px solid black;' class="galeria">
+           
+             <div class="imgGaleria" style=''>
+               <img src='imagem/<?php echo $linha->imgPet1; ?>' style='width:365px;max-height: 407px;'>
+             </div>
                   
                  <table border="0" style="max-width:100%;font-size:1.3em;" align="center"> <!-- 390/390-->
                 
@@ -87,8 +88,9 @@ include("includes/tags_inicio.php");
                  </tr>
                     </table></a> 
       <br>
-
+</div>
      </div> 
+    
 <?php
       }
 }
