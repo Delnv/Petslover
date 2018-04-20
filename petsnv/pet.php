@@ -14,18 +14,8 @@
    
     $cd = $_GET['n'];
 
-        //$sql = "SELECT cd_pet,nm_pet,nm_raca_pet,dt_nascimento_pet,nm_tipo_pet,ds_pet,ic_pedigree_sim_nao,nm_cor_pet,ic_sexo_macho_femea,nm_tamanho_pet FROM PET  where cd_pet='" . $cd . "' ";
-        //$sql2 = "SELECT im_pet,cd_imagem_pet FROM IMAGEM_PET WHERE cd_pet='" . $cd . "' ";
-
-         $sql= "SELECT p.cdPet, p.nmPet,p.nmFaixaEtariaPet,p.nmTipoPet,p.descPet,p.icSexoPet,p.nmPortePet,i.imgPet1,i.cdImagem,u.cdUsuario,u.nmUsuario FROM PET AS p INNER JOIN IMAGEM_PET AS i INNER JOIN  USUARIO AS u ON p.cdPet = i.cdPet and p.cdUsuario = u.cdUsuario WHERE p.cdPet='" . $cd . "' ";
+    $sql= "SELECT p.cdPet, p.nmPet,p.nmFaixaEtariaPet,p.nmTipoPet,p.descPet,p.icSexoPet,p.nmPortePet,i.imgPet1,i.cdImagem,u.cdUsuario,u.nmUsuario FROM PET AS p INNER JOIN IMAGEM_PET AS i INNER JOIN  USUARIO AS u ON p.cdPet = i.cdPet and p.cdUsuario = u.cdUsuario WHERE p.cdPet='" . $cd . "' ";
         
-       // $sql = "SELECT p.cdPet,p.nmPet,p.nmFaixaEtariaPet,p.nmTipoPet,p.descPet,
-             // p.nmPortePet,p.icSexoPet,u.nmUsuario,u.cdCep,u.cdUsuario,l.emailUsuario,i.imgPet1
-             // FROM PET p, USUARIO u, LOGIN l, IMAGEM_PET i
-             // WHERE  u.cdUsuario=l.cdUsuario
-              //and u.cdUsuario=p.cdUsuario and p.cdPet=i.cdPet and u.cdUsuario='" . $cd . "'";
-
-        //$result = mysqli_query($con, $sql2);
     $res = mysqli_query($con, $sql);
        
      while ($linha = mysqli_fetch_object($res)) {
