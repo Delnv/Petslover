@@ -17,7 +17,13 @@
         //$sql = "SELECT cd_pet,nm_pet,nm_raca_pet,dt_nascimento_pet,nm_tipo_pet,ds_pet,ic_pedigree_sim_nao,nm_cor_pet,ic_sexo_macho_femea,nm_tamanho_pet FROM PET  where cd_pet='" . $cd . "' ";
         //$sql2 = "SELECT im_pet,cd_imagem_pet FROM IMAGEM_PET WHERE cd_pet='" . $cd . "' ";
 
-    $sql= "SELECT p.cdPet, p.nmPet,p.nmFaixaEtariaPet,p.nmTipoPet,p.descPet,p.icSexoPet,p.nmPortePet,i.imgPet1,i.cdImagem FROM PET AS p INNER JOIN IMAGEM_PET AS i ON p.cdPet = i.cdPet WHERE p.cdPet='" . $cd . "' ";
+         $sql= "SELECT p.cdPet, p.nmPet,p.nmFaixaEtariaPet,p.nmTipoPet,p.descPet,p.icSexoPet,p.nmPortePet,i.imgPet1,i.cdImagem,u.cdUsuario,u.nmUsuario FROM PET AS p INNER JOIN IMAGEM_PET AS i INNER JOIN  USUARIO AS u ON p.cdPet = i.cdPet and p.cdUsuario = u.cdUsuario WHERE p.cdPet='" . $cd . "' ";
+        
+       // $sql = "SELECT p.cdPet,p.nmPet,p.nmFaixaEtariaPet,p.nmTipoPet,p.descPet,
+             // p.nmPortePet,p.icSexoPet,u.nmUsuario,u.cdCep,u.cdUsuario,l.emailUsuario,i.imgPet1
+             // FROM PET p, USUARIO u, LOGIN l, IMAGEM_PET i
+             // WHERE  u.cdUsuario=l.cdUsuario
+              //and u.cdUsuario=p.cdUsuario and p.cdPet=i.cdPet and u.cdUsuario='" . $cd . "'";
 
         //$result = mysqli_query($con, $sql2);
     $res = mysqli_query($con, $sql);
@@ -57,6 +63,11 @@
                               }?> </label></td>
                     </tr>
 
+                     <tr>
+                      <td class='tabPret'><b>Tipo :</b>  &nbsp;
+                      <label class="pets"><?php echo $linha->nmTipoPet;?></label></td>
+                    </tr>
+
                     <tr>
                       <td class='tabPret'><b>Faixa Et&aacute;ria :</b>  &nbsp;
                       <label class="pets"><?php echo $linha->nmFaixaEtariaPet;?></label></td>
@@ -64,7 +75,7 @@
 
                     <tr>
                       <td class='tabPret'><b>Tratador (a) :</b> &nbsp;
-                      <label class="pets"><?php echo "$linha->nmPet"; ?></label></td>
+                      <label class="pets"><?php echo "$linha->nmUsuario"; ?></label></td>
                     </tr>
                 
                     <tr>
@@ -74,7 +85,7 @@
                 
                     <tr>
                      <td class='tabPret'><b>Detalhes :</b> &nbsp;
-                     <label class="pets" style="max-width:30%"><?php echo wordwrap($linha->descPet, 48, "\n", true); ?></label></td> <!-- wordwrap: limita a quantidade de caracteres por linha --> 
+                     <label class="pets" style="max-width:30%;wordwrap: break-word"><?php echo $linha->descPet; ?></label></td> <!-- wordwrap: limita a quantidade de caracteres por linha --> 
                     </tr>
                    
                   </table>
