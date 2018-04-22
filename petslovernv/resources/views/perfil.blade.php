@@ -84,7 +84,7 @@
               <span style="margin-left: 19px;">
                 <label class="campos3">Senha Atual</label> &nbsp;
                 <a href="#recuperar-senha" id="link" tabindex="4">(esqueci minha senha)</a><br>
-                <input type="password"  name="tsenha" size="29" id="tsenha" title="Letras ou números,mínimo 6" pattern="^[a-zA-Zà-úÀ-Ú0-9]+$" maxlength="20" tabindex="5"/><br>
+                <input type="password"  name="senha_atual" size="29" id="tsenha" title="Letras ou números,mínimo 6" pattern="^[a-zA-Zà-úÀ-Ú0-9]+$" maxlength="20" tabindex="5"/><br>
 
                 <label class="campos3">Nova Senha</label><br> 
                 <input type="password" name="nsenha" size="29" id="nsenha" title="Letras ou números,mínimo 6" pattern="^[a-zA-Zà-úÀ-Ú0-9]+$" maxlength="20" tabindex="6"/><br>

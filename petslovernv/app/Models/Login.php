@@ -49,6 +49,26 @@ class Login extends Model
         return $cdUsuario;
     }
 
+    public function alterarEmail($email, $novoEmail, $cdUsuario)
+    {
+        # Pega a senha antiga
+        $senha = $this->getSenhaAtual($email, $cdUsuario);
+
+        # Traz o e-mail, caso seja um novo valor retorna vazio
+        $email = $this->getEmailAtual($novoEmail, $cdUsuario);
+
+        # Verificar se a variavel esta vazia, 
+        # caso esteja o e-mail pode ser alterado,
+        # pois trata-se de um novo e-mail.
+        if(is_null($email) OR empty($email)){
+            $status = $this->cadastrarLogin($novoEmail, $senha['nmSenha'], $cdUsuario);
+            return True;
+        }else{
+            return False;
+        }
+    }
+
+    # Método para alterar a senha
     public function alterarDadosLogin($email, $senha, $novaSenha, $cdUsuario)
     {
         /**
@@ -57,6 +77,21 @@ class Login extends Model
             caso a senha confira com o valor enviado, altera a senha.
         */
 
+        $senhaAtual = $this->getSenhaAtual($email, $cdUsuario);
+
+        if($senhaAtual['nmSenha']==$senha){
+            $status = self::where([
+                          ['nmEmail', '=', $email],
+                          ['cdUsuario', '=', $cdUsuario]
+                        ])->update(['nmSenha' => $novaSenha]);
+            return $status;
+        }else{
+            return False;
+        }
+    }
+
+    private function getSenhaAtual($email, $cdUsuario)
+    {
         $senhaAtual = self::select('nmSenha')
                             ->where([
                                       ['nmEmail', '=', $email],
@@ -64,14 +99,18 @@ class Login extends Model
                                     ])
                             ->first();
 
-        if($senhaAtual==$senha){
-            $senha = self::where([
-                                   ['nmEmail', '=', $email],
-                                   ['cdUsuario', '=', $cdUsuario]
-                                 ])
-                            ->update(['nmSenha' => $novaSenha]);
-        }
+        return $senhaAtual;
+    }
 
-        return $senha;
+    private function getEmailAtual($email, $cdUsuario)
+    {
+        $email = self::select('nmEmail')
+                            ->where([
+                                        ['cdUsuario', '=', $cdUsuario],
+                                        ['nmEmail', '=', $email]  
+                                    ])
+                            ->first();
+
+        return $email;
     }
 }

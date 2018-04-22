@@ -53,15 +53,15 @@ class PerfilController extends Controller
 
     }
 
-    public function alterarDadosLogin()
+    public function alterarDadosLogin(Request $request)
     {   
-        $request = new Request();
         $login = new Login();
 
-        $novo_email = $request->input('');
-        $senhaAtual = $request->input('tsenha');
+        $novo_email = $request->input('tnm_email');
+        $senhaAtual = $request->input('senha_atual');
         $nova_senha = $request->input('nsenha');
         
+        #Tenta pegar o usuário setado
         if($request->session()->has('usuario')){
             $usuario = $request->session()->get('usuario');
         }
@@ -69,10 +69,18 @@ class PerfilController extends Controller
         if(!empty($novo_email) && !is_null($novo_email)){
             # Método para adicionar um novo email a tabela de Login
             # e atribuir o código do usuário e a senha para este novo e-mail.
+            $status = $login->alterarEmail($usuario->nmEmail, $novo_email, $usuario->cdUsuario);
+
+            //Dar um jeito de dar um reload na sessão para atualizar o e-mail na pag. de perfil
+            if($status){
+                return "E-mail alterado com sucesso!";
+            }else{
+                return "E-mail já existe.";
+            }
         }
 
+        # Método para alterar a senha
         if(!empty($nova_senha) && !is_null($nova_senha)){
-            # Método para alterar a senha
 
             $status = $login
                             ->alterarDadosLogin($usuario->nmEmail, 
@@ -80,7 +88,13 @@ class PerfilController extends Controller
                                                 $nova_senha, 
                                                 $usuario->cdUsuario);
 
-            echo $status;
+            if($status){
+
+                return "Senha alterada com sucesso!";
+
+            }else{
+                return "Senha incorreta";
+            }
         }
     }
 }
