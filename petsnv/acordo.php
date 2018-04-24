@@ -3,11 +3,11 @@
 <div class="container" style="">
 <?php include './includes/header.php';?>
  <section>
-  	<div class="geral clearfix" style="">
+  	<div class="geral clearfix">
 
   		 <p class="paragrafos" align="center">Acordo de Utilização</p><br><br>
 
-  		 <div class="conteudo" style="">
+  		 <div class="conteudo">
 
   		  <div class= "acordo" style="width: 76.2195122%; font-size:1.4em;margin:auto;line-height:180%"> <!-- 1000/1312-->
  <p align="justify" style="font-weight:bold">1.  Apresentação</p>
