@@ -11,8 +11,8 @@
 
 	<!-- Javascript -->
 	<script type="text/javascript"></script>
-  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
-  	<script src="{{ asset('js/validacao_js.js') }}"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+  <script src="{{ asset('js/validacao_js.js') }}"></script>
 
 </head>
 <body>
@@ -140,9 +140,8 @@ $(document).ready(function() {
         </nav>
     </div>
 
-    <script src="js/jquery-1.12.3.js"></script>
-    <script src="includes/functions.js"></script>
-    <script src="includes/validacao_js.js"></script>
+    <!--<script src="js/jquery-1.12.3.js"></script>-->
+    <!--<script src="includes/functions.js"></script>    -->
 </header>
  
 <div id="boxes">

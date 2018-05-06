@@ -48,22 +48,42 @@ class PerfilController extends Controller
         return redirect('/');
     }
 
-    public function alterarDadosUsuario(Request $request)
-    {
-
-    }
-
     public function alterarDadosLogin(Request $request)
     {   
         $login = new Login();
+        $user = new Usuario();
+
+        $message = array();
 
         $novo_email = $request->input('tnm_email');
         $senhaAtual = $request->input('senha_atual');
         $nova_senha = $request->input('nsenha');
+        $nome = $request->input('tnm_usuario');
+        $cep = $request->input('tcd_cep');
+
+        #Variável setada para excluir o usuário
+        $command = $request->input('cmd');
         
         #Tenta pegar o usuário setado
         if($request->session()->has('usuario')){
             $usuario = $request->session()->get('usuario');
+        }
+
+        # Caso o botão de exclusão for acionado, o usuário será excluído.
+        if($command == 'Excluir'){
+
+            $user->excluirUsuario($usuario->cdUsuario);
+
+            #Verificar por que não está redirecionando para a pagina inicial
+            $this->logout($request);
+        }
+
+        if(!empty($nome) && !is_null($nome)){
+            $status = $user->alterarNome($nome, $usuario->cdUsuario);
+        }
+
+        if(!empty($cep) && !is_null($cep)){
+            $status = $user->alterarCep($cep, $usuario->cdUsuario);
         }
 
         if(!empty($novo_email) && !is_null($novo_email)){
@@ -73,9 +93,9 @@ class PerfilController extends Controller
 
             //Dar um jeito de dar um reload na sessão para atualizar o e-mail na pag. de perfil
             if($status){
-                return "E-mail alterado com sucesso!";
+                array_push($message, "E-mail alterado com sucesso!");
             }else{
-                return "E-mail já existe.";
+                array_push($message, "E-mail já existe.");
             }
         }
 
@@ -83,18 +103,23 @@ class PerfilController extends Controller
         if(!empty($nova_senha) && !is_null($nova_senha)){
 
             $status = $login
-                            ->alterarDadosLogin($usuario->nmEmail, 
+                            ->alterarSenha($usuario->nmEmail, 
                                                 $senhaAtual, 
                                                 $nova_senha, 
                                                 $usuario->cdUsuario);
-
             if($status){
 
-                return "Senha alterada com sucesso!";
+                array_push($message, "Senha alterada com sucesso!");
 
             }else{
-                return "Senha incorreta";
+                array_push($message, "Senha incorreta");
             }
         }
+
+        //Mostrar a mensagem através de Jquery na view
+        /*if(!empty($message)){
+            return view('perfil', $message);
+        }*/
+        return $message;
     }
 }

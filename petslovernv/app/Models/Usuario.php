@@ -60,8 +60,25 @@ class Usuario extends Model
         return $usuario;
     }
 
-    public function alterarDados($cdUsuario = '', $senha)
+    public function alterarNome($nome, $cdUsuario)
     {
-        
+        $update = self::where('cdUsuario', $cdUsuario)
+                        ->update(['nmUsuario' => $nome]);
+
+        return $update;
+    }
+
+    public function alterarCep($cep, $cdUsuario)
+    {
+        $update = self::where('cdUsuario', $cdUsuario)
+                        ->update(['cdCep' => $cep]);
+
+        return $update;
+    }
+
+    public function excluirUsuario($cdUsuario)
+    {
+        self::where('cdUsuario', $cdUsuario)
+                        ->delete();
     }
 }

@@ -1,7 +1,7 @@
 @extends('template.template')
 @section('content')
 <script>
-          function esconderPerfilMensagem(obj){
+          /*function esconderPerfilMensagem(obj){
             document.getElementById('mensagem').style.display="none";
             
             switch(obj.id){
@@ -13,8 +13,10 @@
              document.getElementById('mensagem').style.display="none";
              document.getElementById('perfil').style.display="block"; 
              break;
+            }
           }
-            
+           
+           
           function esconderDivsPet(obj){
             document.getElementById('dados').style.display="block";
             document.getElementById('editar').style.display="none";
@@ -35,8 +37,15 @@
              document.getElementById('excluir').style.display="block";
              
              break;
-           }
+            }
+          }*/
+
+           //Fazer uma função em javascript para pegar o nome do elemento que está
+           //sendo clicado (das abas para alterar os dados)
+           //e enviar esse nome no form para o controller sabe qual função de alteração
+           //de dados chamar.
 </script>
+<script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
 
 <div class="container" style="">
   <section>
@@ -78,7 +87,7 @@
           </p>
 
           <div id="todas">
-            <div>
+            <div id='teste'>
               <a href="campos" class="abrirCampos" tabindex="3">Alterar Senha</a>
               <hr class="line"><br>
               <span style="margin-left: 19px;">
@@ -111,10 +120,10 @@
                     value="Não informado" maxlength='9' title='Somente números' OnKeyPress="formata('#####-###', this)" pattern='^[0-9]{5}-[0-9]{3}$' size="29" tabindex="10"/><br>
                 @endif
                 
-
+                <!-- Não é possível deixar e-mail setado pois senão ele vai mudar toda vez que uma  alteração em algum outro dado ser feita -->
                 <label class="campos3">Alterar E-mail</label><br>
                 <input type="email" style="color:#708090" name="tnm_email" id="text2" size="29" maxlength="70" tabindex="11" onblur="getEmail(this.value)" 
-                value="{{$usuario->nmEmail}}"/><br>
+                value=""/><br>
                 <label class="campos3">Alterar Foto</label><br>
                 <input type="file" style="color:#708090" value="fileToUpload" style="font-size:1.1em" name="fileToUpload" tabindex="15" id="imagemSub" size="35" accept="image/gif, image/jpeg, image/jpg, image/png" onchange="return is_img(this.id);"/><br><br>
               </span>
@@ -131,22 +140,18 @@
              <div>
               <a href="campos" class="abrirCampos" tabindex="13">Excluir Perfil</a><br>
               <hr class="line">
-              <span>
+              <span id="span-excluir">
                 <p align="center"><label class="dois" style="font-size: 1em">
                    Tem certeza que deseja excluir seu perfil!<br>
                    Todos os seu pets cadastrados também <br>
                    serão excluídos!<br>
                  </label></p>
-                  <p align="center"><input type='submit' onClick="ocultarDiv(this);" id="sair" name='cmd' class='btAlterar' style="min-width:25%;" value='Cancelar' tabindex="14"/> 
+                  <p align="center"><input type='reset' id="btn-sair" name='cmd' class='btAlterar' style="min-width:25%;" value='Cancelar' tabindex="14"/> 
                  <input type='submit' name='cmd' id='btexcluir' style='min-width:25%' value='Excluir' tabindex="15"/></p><!-- 150/600-->
                  <hr class="line">  
               </span>
                 
              </div>
-             <p align="center"><label class="dois" style="font-size: 1em">
-                   Atenção! Ao excluir seu perfil todos os pets<br>
-                   cadastrados também serão excluídos!<br>
-                  </label></p>
              <p align="center"><input type='submit' name='cmd' class='btAlterar' style='min-width:25%' value='Salvar Alterações' tabindex="16"/></p>
              <hr class="line">
              <p align="center"><img src="{{asset('image/logo1.png')}}"></p>
@@ -211,6 +216,6 @@
     </form>
   </section>
 
-<script src="includes/showImage.js"></script>
+<!--<script src="includes/showImage.js"></script>-->
 </div>
 @endsection

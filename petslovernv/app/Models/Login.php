@@ -69,7 +69,7 @@ class Login extends Model
     }
 
     # Método para alterar a senha
-    public function alterarDadosLogin($email, $senha, $novaSenha, $cdUsuario)
+    public function alterarSenha($email, $senha, $novaSenha, $cdUsuario)
     {
         /**
             Alterar a senha do usuário: 
