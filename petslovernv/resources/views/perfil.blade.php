@@ -200,7 +200,7 @@
                    serão excluídos!<br>
                  </label></p>
                  <p align="center"><input type='submit' onClick="ocultarDiv(this);" id="sair" name='cmd' class='btAlterar' style="min-width:25%;" value='Cancelar' tabindex="14"/> 
-+                  <p align="center"><input type='reset' id="btn-sair" name='cmd' class='btAlterar' style="min-width:25%;" value='Cancelar' tabindex="14"/>
+                 <p align="center"><input type='reset' id="btn-sair" name='cmd' class='btAlterar' style="min-width:25%;" value='Cancelar' tabindex="14"/>
                   <p align="center"> 
                  <input type='submit' name='cmd' id='btexcluir' style='min-width:25%' value='Excluir' tabindex="15"/></p>
                  <hr class="line">  
