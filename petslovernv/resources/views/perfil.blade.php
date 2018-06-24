@@ -30,8 +30,13 @@
        }else {
         el.style.display = '';
        }
-    }   
+    } 
+     //Fazer uma função em javascript para pegar o nome do elemento que está
+           //sendo clicado (das abas para alterar os dados)
+           //e enviar esse nome no form para o controller sabe qual função de alteração
+           //de dados chamar.
 </script>
+<script type="text/javascript" src="{{ asset('js/functions.js') }}"></script>
 
 <div class="container">
   <section>
@@ -107,7 +112,7 @@
                   <input type='text' class="campCadPet cor3 tam" name='tcd_cep'
                     value="Não informado" maxlength='9' title='Somente números' OnKeyPress="formata('#####-###', this)" pattern='^[0-9]{5}-[0-9]{3}$' tabindex="10"/><br>
                 @endif
-                
+                 <!-- Não é possível deixar e-mail setado pois senão ele vai mudar toda vez que uma  alteração em algum outro dado ser feita -->
                 <label class="campos3">Alterar E-mail</label><br>
                 <input type="email" class="campCadPet cor3 tam" name="tnm_email" id="text2"  maxlength="70" tabindex="11" onblur="getEmail(this.value)" 
                 value="{{$usuario->nmEmail}}"/><br>
@@ -186,7 +191,7 @@
              <div>
               <a href="campos" class="abrirCampos" tabindex="13">Excluir Perfil</a><br>
               <hr class="line">
-              <span>
+              <span id="span-excluir">
                <form action="/editar-perfil" method='POST'  name='perfil' enctype="multipart/form-data" onsubmit="return btCadastrar()">
                  {{csrf_field()}}
                 <p align="center"><label class="dois d">
@@ -194,6 +199,8 @@
                    Todos os seu pets cadastrados também <br>
                    serão excluídos!<br>
                  </label></p>
+                 <p align="center"><input type='submit' onClick="ocultarDiv(this);" id="sair" name='cmd' class='btAlterar' style="min-width:25%;" value='Cancelar' tabindex="14"/> 
++                  <p align="center"><input type='reset' id="btn-sair" name='cmd' class='btAlterar' style="min-width:25%;" value='Cancelar' tabindex="14"/>
                   <p align="center"> 
                  <input type='submit' name='cmd' id='btexcluir' style='min-width:25%' value='Excluir' tabindex="15"/></p>
                  <hr class="line">  
