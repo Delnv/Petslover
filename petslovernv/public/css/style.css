@@ -1459,7 +1459,7 @@ img, figure, video, picture {
     min-width: 33%;
    }
    .inpsize{
-    max-width:25%;
+    max-width:33%;
    }
    .divlogin{
     height:100px;
@@ -1636,7 +1636,7 @@ img, figure, video, picture {
     text-align: left;
    }
    .inpsize{
-    max-width:27%;
+    max-width:33%;
    }
    .divlogin{
     height:100px;
@@ -1806,7 +1806,7 @@ img, figure, video, picture {
     min-width:67%;
    }
    .inpsize{
-    max-width:27%;
+    max-width:34%;
    }
    .divlogin{
     height:100px;
