@@ -179,7 +179,7 @@
                               <div id="hint"></div>
 
                                <p align="center">
-                                 <input type="hidden" name="cdusuario" value="<?php echo $cdUsuario; ?>">
+                                 <input type="hidden" name="cdusuario" value="{{$usuario->cdUsuario}}">
                                  <button type="submit" name="cadastrar" id="btnfarejar" style="min-width:25%" tabindex="27">Cadastrar Pet</button>
                                </p> 
                             
@@ -230,7 +230,7 @@
            <div class="trocaPet" >
             <ul>
              <li class="liInfoPet">Dta cadastro</li>
-             <li class="liInfoPet"><a href="#" id="dds" onClick="esconderDivsPet(this);" tabindex="31"><?php echo $linha->nmPet; ?></a></li>
+             <li class="liInfoPet"><a href="#" id="dds" onClick="esconderDivsPet(this);" tabindex="31">{{$pet->nmPet}}</a></li>
              <li class="liInfoPet"><a href="#" id="ed" onClick="esconderDivsPet(this);" tabindex="32">Editar pet</a></li>
              <li class="liInfoPet"><a href="#" id="exl" onClick="esconderDivsPet(this);" tabindex="33">Excluir pet</a></li>
             </ul><br>
