@@ -225,14 +225,15 @@
         <br><br><br><br><br>
         
         <!-- inicio divdir perfil -->
+        <!-- ESTE PERFIL DOS PETS (DADOS, ALTERACAO E EXCLUSAO) DEVEM SER EXIBIDOS POR CADA PET CADASTRADO DO USUARIO DOADOR -->
        <div id="perfil" class="divdir bordaPerfil abasDivs">
           <p class="paragrafos3" align="center">Meus pets cadastrados</p>
            <div class="trocaPet" >
             <ul>
-             <li class="liInfoPet">Dta cadastro</li>
-             <li class="liInfoPet"><a href="#" id="dds" onClick="esconderDivsPet(this);" tabindex="31">{{$pet->nmPet}}</a></li>
-             <li class="liInfoPet"><a href="#" id="ed" onClick="esconderDivsPet(this);" tabindex="32">Editar pet</a></li>
-             <li class="liInfoPet"><a href="#" id="exl" onClick="esconderDivsPet(this);" tabindex="33">Excluir pet</a></li>
+             <li class="liInfoPet" value="{{$pet->cdPet}}">Dta cadastro</li>
+             <li class="liInfoPet"><a href="#" id="dds" onClick="esconderDivsPet(this);" value="{{$pet->cdPet}}" tabindex="31">{{$pet->nmPet}}</a></li>
+             <li class="liInfoPet"><a href="#" id="ed" onClick="esconderDivsPet(this);" value="{{$pet->cdPet}}" tabindex="32">Editar pet</a></li>
+             <li class="liInfoPet"><a href="#" id="exl" onClick="esconderDivsPet(this);" value="{{$pet->cdPet}}" tabindex="33">Excluir pet</a></li>
             </ul><br>
            </div><!-- fim div trocaPet --> <br>
 
