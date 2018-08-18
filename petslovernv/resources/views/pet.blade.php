@@ -16,9 +16,11 @@
                   @endif
                  </p><br>
 
-                <div class='divesq'>
-                   <figure class="fotos"><img src='{{ asset($img->nmImgPet) }}' id='img' class='petSize'/> </figure>
-                </div>
+               <div class='divesq' style="overflow: hidden;">
+                  <div class="slide-wrapper">
+                   <div class="slide"><figure class="fotos1"><img src='{{ asset($img->nmImgPet) }}' id='img' class='petSize'/></figure></div>
+                  </div>
+               </div>
 
   {{$pet->cdPet}}
                      
