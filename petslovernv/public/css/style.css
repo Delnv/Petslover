@@ -1157,6 +1157,30 @@ p.paragrafos3{ /*p da div excluir pet de pags de perfil*/
  .mens{ /* href do link da caixa de entrada pag. mensagem*/
   padding-left:20px;
  }
+  /* utilizado nos slides das imgs na pag. pet*/
+  .slide-wrapper {
+    width: 2500px;
+    -webkit-animation: slide 9s ease infinite;
+  }
+  .slide-wrapper:hover { 
+    animation-play-state: paused;
+  }
+  .slide {
+    float: left;
+    width: 20%;   
+  } 
+  @-webkit-keyframes slide {
+    10% {margin-left: 0px;}
+    20% {margin-left: -500px;}
+    30% {margin-left: -500px;}
+    40% {margin-left: -1000px;}
+    50% {margin-left: -1000px;}
+    60% {margin-left: -1500px;}
+    70% {margin-left: -1500px;}
+    80% {margin-left: -2000px;}
+    90% {margin-left: -2000px;}
+  }
+/* --------------------------------------------*/
 /* ---------Para adaptar o site em diferentes telas e aplicar os estilos de CSS para cada uma ------------*/
 
 /*table{display:block; width:auto; overflow-x: auto; white-space: nowrap;} COLOCAR NAS MEDIAS QUERIES*/
@@ -1202,6 +1226,11 @@ img, figure, video, picture {
   .forms{
     margin: auto;
   }
+  .fotos1{ /* figure img pet na pag. pet*/
+    margin-left: 1%;
+    margin-right: 0;
+    max-width: 80%;
+  }   
  
 }
 /* media 2 */
@@ -1226,6 +1255,11 @@ img, figure, video, picture {
   }
   p.eco{
     max-width: 100%;
+  }
+  .fotos1{ /* figure img pet na pag. pet*/
+     max-width: 75%;
+     margin-right: 0;
+     margin-left:0;
   }
     
 } 
@@ -1259,6 +1293,11 @@ img, figure, video, picture {
   }
   p.eco{
     max-width: 15%;
+  }
+  .fotos1{ /* figure img pet na pag. pet*/
+     max-width: 70%;
+     margin-right: 0;
+     margin-left:0;
   }
   
 } 
@@ -1312,7 +1351,11 @@ img, figure, video, picture {
     margin-top: 8px;
     margin-left: 8%;
   }
-
+  .fotos1{ /* figure img pet na pag. pet*/
+     max-width: 65%;
+     margin-right: 0;
+     margin-left:0;
+  }
  }  
 
  /* media 4 */     
@@ -1346,7 +1389,12 @@ img, figure, video, picture {
    .fotos{
      margin-left:0;
      margin-right: 180px;
-    } 
+    }
+    .fotos1{ /* figure img pet na pag. pet*/
+     max-width: 70%;
+     margin-right: 0;
+     margin-left:18%;
+    }
    .divdoar{  /* div do botoes doar e adotar da p. index*/
      float: right;
      max-width:50%;
@@ -1486,7 +1534,7 @@ img, figure, video, picture {
     margin-left: 25%;
   }
 }   
-/* media 3 */
+/* media 5 */
 @media only screen and (min-width:720px) and (max-width:780px) {
   .divdir2{
     float: left;
@@ -1517,6 +1565,10 @@ img, figure, video, picture {
     .fotos{
       margin-left:0;
       margin-right: 130px;
+    } 
+    .fotos1{ /* figure img pet na pag. pet*/
+     max-width:75%;
+     margin:0 0;
     } 
     .divdoar{  /* div do botoes doar e adotar da p. index*/
       float: right;
@@ -1662,7 +1714,7 @@ img, figure, video, picture {
 
 }
 
-/* media 5 */
+/* media 6 */
 @media only screen and (min-width: 480px) and (max-width:720px) {
    .divdir2{
     float: left;
@@ -1713,6 +1765,10 @@ img, figure, video, picture {
       margin-left:0;
       margin-right: 100px;
     } 
+    .fotos1{ /* figure img pet na pag. pet*/
+     max-width:70%;
+     margin:0 0;
+    }
     .divdoar{  /* div do botoes doar e adotar da p. index*/
       float: right;
       max-width:50%;
@@ -1834,7 +1890,7 @@ img, figure, video, picture {
   }
 }
 
-/* media 6 */
+/* media 7 */
 @media screen and (max-width: 480px) , (orientation: portrait) {
    .divdir2{
     float: left;
@@ -2024,6 +2080,10 @@ img, figure, video, picture {
    /* figure utilizada na imagem da pag. contato*/ 
    .fotos{
      width:100%;
+     margin:0;
+   }
+   .fotos1{ /* figure img pet na pag. pet*/
+     max-width:100%;
      margin:0;
    }
    .far{ /* botoes cadastro e login da pag. pet*/ 
