@@ -1181,6 +1181,9 @@ p.paragrafos3{ /*p da div excluir pet de pags de perfil*/
     90% {margin-left: -2000px;}
   }
 /* --------------------------------------------*/
+.tam{ /* width dos campos de cadatrar novo pet*/
+    width: 100%;
+ }
 /* ---------Para adaptar o site em diferentes telas e aplicar os estilos de CSS para cada uma ------------*/
 
 /*table{display:block; width:auto; overflow-x: auto; white-space: nowrap;} COLOCAR NAS MEDIAS QUERIES*/
@@ -1261,6 +1264,9 @@ img, figure, video, picture {
      margin-right: 0;
      margin-left:0;
   }
+  .tam{ /* width dos campos de cadatrar novo pet*/
+    width: 100%;
+   } 
     
 } 
 @media only screen and (max-width: 1242px) and (min-width: 1149px)  {
@@ -1298,6 +1304,9 @@ img, figure, video, picture {
      max-width: 70%;
      margin-right: 0;
      margin-left:0;
+  }
+  .tam{ /* width dos campos de cadatrar novo pet*/
+    width: 90%;
   }
   
 } 
@@ -1355,6 +1364,9 @@ img, figure, video, picture {
      max-width: 65%;
      margin-right: 0;
      margin-left:0;
+  }
+  .tam{ /* width dos campos de cadatrar novo pet*/
+     width: 90%;
   }
  }  
 
