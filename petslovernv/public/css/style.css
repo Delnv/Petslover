@@ -1,3 +1,4 @@
+
 body{
     font-family: helvetica,sans-serif;
     background-attachment: url(../img/palito.png) scroll;
@@ -5,26 +6,29 @@ body{
     //background-position: center center; 
     //background-size:cover;
     padding-top:0px;
-    padding-bottom:0px;
+    padding-bottom:0;
     margin:0;
     //margin-top: 160px;
     font-size: 62.5%;
- }
+    height: 100%;
+}
 
 .geral{
    max-width: 1349px;
-   min-height: 417px;
    padding-left: 1.48258%;  /* 1.48258% 20px / 1349px */
    padding-right: 1.48258%; /* 20px / 1349px */
    padding-top: 0.07412898%; /* 1px / 1349px */
    padding-bottom: 0.7412898%; /* 10px / 1349px */
    font-size: 1.3em;
    margin: auto;
+   min-height: 417px;
+   max-height: auto;
+   background-color: white;
  } 
 
 /* ----- Header -------*/
 #header{
-  height: 125px;
+  height: 130px;
   background-color: #6495ED;
   border-bottom:3px solid #B0E0E6;
   position: relative;
@@ -53,17 +57,19 @@ body{
 }
 #headernav ul li a:hover{
   color: #B0E0E6;
+  text-decoration: underline;
 }
 
 /*-------- Footer ----------*/
 #footer{
-  height: 98px;
+  height: 83px;
   margin: auto;
   background-color: #6495ED;
   border-top:3px solid #B0E0E6;
-  position: absolute;
+  /*position: fixed !important;*/
+  bottom: 0;
   min-width: 100%;
- }
+}
 #footernav{
   width: 100%; /*1050px / 1128px */
   margin: auto;
@@ -71,19 +77,20 @@ body{
   padding-right:0px;
 }
 
-footer nav ul li{
+#footer nav ul li{
   list-style: none;
   display: inline-block;
   margin-right: 70px;
     //margin-top:21px;
 }
-footer nav ul li a{
+#footer nav ul li a{
   font-size: 1.4em;
   color: white;
   text-decoration: none;
 }
-footer nav ul li a:hover{
+#footer nav ul li a:hover{
   color: #B0E0E6;
+  text-decoration: underline;
 }
 /* ------------------------------- */
 
@@ -104,7 +111,11 @@ footer nav ul li a:hover{
     margin-right: 5px;
 }
 .mens-itself:hover{
-    background-color: aliceblue;
+    background-color: #B0E0E6;
+}
+.mens:hover{
+    text-decoration: underline;
+    color: black;
 }
 /* ----------------------------------- */
 
@@ -123,6 +134,7 @@ footer nav ul li a:hover{
   margin: auto; 
   padding-left: 1.52439%; /* 20px 3.429878% 45 / 1312 */
   //border: 1px solid red;
+
   }
 
  /* ----------------------- */
@@ -133,15 +145,15 @@ footer nav ul li a:hover{
   float: right;
   margin-right: 2.286585%; /* 30px / 1312px */
   padding-right: 2.286585%;
-  }
+}
 .divesq{
   max-width:  45.73170732%;/* 42.25321%; 570px / 1312px */
   float: left;
   margin-left: 2.286585%;/*  30px / 1312px */
-} 
+ }
 .divesq:last-child {
     margin-right: 0;
-}
+ }
 
 /* ----------------------- */
 
@@ -339,7 +351,7 @@ label.campos3{ /* pag. perfil */
     border: 2px solid #87bdd8;
 }
 
-/* Utilizado nos botoes de login: header e pag. login */
+/* Utilizado nos botoes de login: header e modal do bt entrar*/
 #btlogin{
     border-radius:2px;
     font-weight:bold;
@@ -362,9 +374,9 @@ label.campos3{ /* pag. perfil */
   transform:rotatey(8deg);
   transition-duration:0.4s;
 }
+/* ----------------------------------------------- */
+
 /* nas pags de pretendente classe dos botoes latida e etc */
-
-
 
 /* Botao facebook */
 #face{
@@ -515,7 +527,6 @@ label.campos3{ /* pag. perfil */
     min-width: 25%;
     height: 40px;
 }
-
 #btexcluir:active {
    box-shadow: 0 8px #FFC47C;
    transform: translateY(13px);
@@ -574,6 +585,7 @@ label.campos3{ /* pag. perfil */
 }
 #senha:hover{
   color: #FFC47C;
+  text-decoration: underline;
 }
 
 #link{
@@ -606,11 +618,16 @@ label.campos3{ /* pag. perfil */
 .pet:hover{
     color: #FFC47C;
 }
-.cliques{
+.cliques{ /* a do clique aqui do cadastro */
   color: #00BFFF;
   text-decoration: none;
   font-size:1.1em;
 }
+.cliques:hover{
+  color: #00BFFF;
+  text-decoration: underline;
+}
+
 /* ---------------------------------- Fim links ---------------------------------- */
 
 /* ----------------------- Paragrafos -------------------------------------------- */
@@ -701,6 +718,7 @@ table td{
 }
 .abrirCampos:hover{
   color: #00BFFF;
+  text-decoration: underline;
 }
 /* ----------------------------------------------------------------------- */
 
@@ -778,16 +796,13 @@ textarea,select{
 .li1Modal{
  background-color: #0000CD;
  border:1px solid #0000CD;
+ 
 }
 .li2Modal{
  background-color: #32CD32;
  border:1px solid #32CD32;
- }
- .linksModal ul li{ /* links do modal utilizados nao possuo cadastro do login */
- border-radius: 0;
- width: 40%;
- padding: 14px; 
- }
+ 
+}
 /* --------------------------------------------------- */
 
 /* utilizado nas li na div troca Pet com os dados do pet */
@@ -796,6 +811,7 @@ textarea,select{
  border:1px solid #E0FFFF;
  width: 24%;
 }
+
 /* ----------------------------------------------------- */
 
 /* -----------------fim dos links ------------------------- */
@@ -803,19 +819,57 @@ textarea,select{
 /* usado no modal do link nao possuo cadastro do login */
 #boxes .window {
   float: right;
+  //position:absolute;
   width:280px;
   height:40px;
   display:none;
+  //z-index:9999;
+  //padding:10px;
   margin-right: 0%;
 }
 
 #boxes #dialog {
   width: 280px; 
   height:40px;
+  //padding:10px;
 }
 /* --------------------------------------- */
 
-/* ------------------------ Estilos utilizados por ultimo ------------------------------- */
+/* ---------Para adaptar o site em diferentes telas e aplicar os estilos de CSS para cada uma ------------*/
+
+/*table{display:block; width:auto; overflow-x: auto; white-space: nowrap;} COLOCAR NAS MEDIAS QUERIES*/
+img, figure, video, picture {
+  max-width: 100%;
+}
+
+*, *:before, *:after { /* com isso os elementos terão apenas a altura e a largura determinadas*/
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+/* adiciona espaco antes e depois dos elementos e evita a aglomeracao dos floats*/
+.clearfix:before,
+.clearfix:after {
+    content: " "; 
+    display: table; 
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+/* ---------------------------- */
+
+.imgsPerfil{ /* imgs utilizadas na pag. de perfil*/
+  margin-left: 17px;
+  border: 1px solid black;
+  height: 70px;
+  width: 60px;
+}
 
 .bordaPerfil{
    /* Border style */ 
@@ -831,6 +885,251 @@ textarea,select{
 .ad{
   float: right;
 }
+ 
+
+/* troca as divs do perfil do pet na pag. perfil/msg */
+ .trocaPet{
+  background-color: #E0FFFF;
+  min-width: 100%;
+  height: 30px;
+ }
+ .trocaPet ul{
+  padding-left: 0;
+ }
+ .trocaPet ul li{ 
+    padding-left: 14px;
+    font-size:1.3em;
+    display: inline-block;
+    cursor: pointer;
+    list-style: none;
+}
+.trocaPet ul li a{
+  text-decoration: none;
+  color: black;
+}
+.trocaPet ul li a:hover{ 
+  color: #90EE90;
+  text-decoration: underline;
+ }
+ /* ----------------------------------------------------- */
+
+ /* Estilos utilizados nos modais bt entrar e link nao possuo cadastro do header */
+/*Link de fechar do modal do nao possuo cadastro e bt entrar no header */
+.close{
+  display:block; 
+  text-align:right; color: #2e69a3;  /* #00BFFF */
+  font-size: 1.8em;
+  font-weight: bold;
+  text-decoration: none
+}
+.close:hover{ text-decoration: none}
+/* ---------------------------------------------------------------------*/
+/*links nao possuo cad. e esqueci senha do modal do bt entrar */
+#mLog{ 
+  text-decoration:none;
+  color: #6495ED;/* */
+  font-size: 1.2em;
+}
+#mLog:hover{ text-decoration: underline; color: #87cefa; }
+/* --------------------------------------------------------- */
+/* ---------------------------------------------------------------------------- */
+
+/* --- para exibir o menu hamburguer e os links nas medias 6 e 7 ------*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #6495ED;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #B0E0E6;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+/* ----------------------------------------------------*/
+/* esconde o menu hamburguer nas outras medias */
+#divMen {
+ display: none; 
+}
+/* ----------------------------------------------------------------------- */
+
+ 
+ /* utilizado nos slides das imgs na pag. pet*/
+  .slide-wrapper {
+    width: 2500px;
+    -webkit-animation: slide 9s ease infinite;
+  }
+  .slide-wrapper:hover { 
+    animation-play-state: paused;
+  }
+  .slide {
+    float: left;
+    width: 20%;   
+  } 
+  @-webkit-keyframes slide {
+    10% {margin-left: 0px;}
+    20% {margin-left: -500px;}
+    30% {margin-left: -500px;}
+    40% {margin-left: -1000px;}
+    50% {margin-left: -1000px;}
+    60% {margin-left: -1500px;}
+    70% {margin-left: -1500px;}
+    80% {margin-left: -2000px;}
+    90% {margin-left: -2000px;}
+  }
+/* --------------------------------------------*/
+
+/*----------- estilos utilizados no header e footer ------------ */
+.logoDef{ /* Div logo do header*/
+  float:left;
+  padding-left:4.6%;
+}
+.acessoDef{ /* Div acesso do login no header*/
+  float:right;width:74.128984%;padding-right: 3%;
+}
+.pOla{ /* paragrafo de boas vindas ao usuario logado no header*/
+  font-size:1.6em;color:white;font-weight:bold;
+}
+.linkOut{ /* link de logout no header*/
+  text-decoration: none;font-size:1.3em;
+}
+.linkOut:hover{ /*link de logout no header */
+  text-decoration: underline;color: #FFC47C;
+}
+.lNao{
+  float:right;
+}
+.sAssinatura{ /* p com assinatura do site no footer*/
+  font-size:1.4em;color:white;
+}
+
+/* ---------------------------------------------------------------*/
+
+.dAcor{ /*utilizado na div acordo na pag. termos*/
+  font-size:1.4em;margin:auto;line-height:180%
+}
+.imgCont{/*img do adsense na pag. contato*/
+  border:1px solid black;
+}
+.imgPata{ /* img pata na pag. perguntas*/
+  width: 18px;
+  height: 15px;
+}
+.tdEst{ /* na div todas da pag.perguntas*/
+  font-size:1.4em;padding-left: 11%;padding-right: 1%
+}
+.imgEq{ /*img equipe na pag. quem somos*/
+  border:2px solid #B0E0E6;
+}
+.campCep{ /*campo CEP nas pags. cadastro e cadastro adotante*/
+  color:blue;font-size:1.0em;text-decoration:none;
+}
+.campCep:hover{
+  text-decoration: underline; color:blue;
+}
+.campTermos{ /* link termos nas pags. cadastro e cadastro adotante*/
+  color:blue;font-weight:bold;text-decoration:none;
+}
+.campTermos:hover{ /* link termos nas pags. cadastro e cadastro adotante*/
+  color: blue;text-decoration: underline;
+}
+.cor2{ /*label do file nos cadastros*/
+  font-size:1.2em;
+}
+p.paragrafos2{ /*p de titulos de pags de cadastros*/
+  font-size: 1.8em;
+  color: #00BFFF;
+}
+p.paragrafos3{ /*p da div excluir pet de pags de perfil*/
+  font-size: 1.5em;
+  color: black;
+}
+.pCad{ /*p de titulo pag de cadastro*/
+  font-size: 1.4em;
+}
+.pCont{  /*p de titulo pag de contato*/
+  color:  #1E90FF;
+  font-size: 1.8em;
+}
+.infoCont{ /*label de info na pag de contato*/
+  font-size:1.0em;
+}
+
+/**/
+.pTitulo{/*paragrafo titulo pag. galeria*/
+  font-size: 1.8em;color: #4169E1;
+}
+.imgPetGal{/*img do pet na pag. galeria*/
+  width:365px;max-height: 407px;
+}
+.tableGal{/*tabela com os dados do pet galeria*/
+  max-width:100%;font-size:1.3em;
+}
+.verMais{/*campo ver mais da pag. galeria*/
+  font-size:0.9em;color:#808080;  
+}
+.divHorizontal{ /*div utilizadas no inicio ou no fim de pags*/
+  clear:both;width:97.25722758%;
+}
+.petSize{ /* imgs do pet na pag pet*/
+  height: auto;
+}
+.pCap{ /* nome maiusculo na pag pet*/
+  text-transform: capitalize;
+}
+
+ .lbDet{ /* label detalhes na pag. pet*/
+  max-width:30%; wordwrap: break-word;
+ }
+ .trcLi1{ /* li1 da trocaDiv na pag. perfil*/ 
+  background-color: #1E90FF;border:1px solid #1E90FF;
+ }
+ .trcLi1:hover{
+  color: black;
+  text-decoration: underline;
+ }
+ #msg:hover{text-decoration: underline;}/* a da trocaDiv na pag.perfil */
+ .trcLi2{  /* li2 da trocaDiv na pag. perfil*/ 
+  background-color: #0000CD; border:1px solid #0000CD;
+ }
+ .trcLi2:hover{
+  color: black;
+ }
+ .contMsgs{ /* contagem das msgs na aba da pag. de perfil*/
+  background-color: white;border-radius: 50%;border: 1px solid #0000CD;font-size: 1.1em;color: #0000CD;
+ }
+ .cor3{ /* cor placeholder no perfil*/
+  color:#708090;
+ }
+ .tbEd{
+  max-width: 100%;
+ }
+ .mens{ /* href do link da caixa de entrada pag. mensagem*/
+  padding-left:20px;
+ }
  p.eco{/*pag. perfil,nos p que exibem os dados do BD, CEP e E-mail */
   background-color:#ADD8E6;
   padding: 10px 17px;
@@ -987,6 +1286,7 @@ hr.lineMsg{ /* linha usada para separar as msgs na pag. perfil / mensagem */
  width:80%;
  padding: 0;
 }
+
 /* ----------------------------------------------------------------------- */
 .campCadPet{ /* utilizados nos campos do cadastrar novo pet  na pag. de perfil*/
   width: 310px;
@@ -1047,175 +1347,13 @@ hr.lineMsg{ /* linha usada para separar as msgs na pag. perfil / mensagem */
  max-width: 55%; 
  padding-right: 0;
 }
-
-/* --------------------------------------------------------------- */
-/*----------- estilos utilizados no header e footer ------------ */
-.logoDef{ /* Div logo do header*/
-  float:left;
-  padding-left:4.6%;
-}
-.acessoDef{ /* Div acesso do login no header*/
-  float:right;width:74.128984%;padding-right: 3%;
-}
-.pOla{ /* paragrafo de boas vindas ao usuario logado no header*/
-  font-size:1.6em;color:white;font-weight:bold;
-}
-.linkOut{ /* link de logout no header*/
-  text-decoration:none;font-size:1.3em;
-}
-.lNao{
-  float:right;
-}
-.sAssinatura{ /* p com assinatura do site no footer*/
-  font-size:1.4em;color:white;
-}
-/* ---------------------------------------------------------------*/
-
-.dAcor{ /*utilizado na div acordo na pag. termos*/
-  font-size:1.4em;margin:auto;line-height:180%
-}
-.imgCont{/*img do adsense na pag. contato*/
-  border:1px solid black;
-}
-.imgPata{ /* img pata na pag. perguntas*/
-  width: 18px;
-  height: 15px;
-}
-.tdEst{ /* na div todas da pag.perguntas*/
-  font-size:1.4em;padding-left: 11%;padding-right: 1%
-}
-.imgEq{ /*img equipe na pag. quem somos*/
-  border:2px solid #B0E0E6;
-}
-.campCep{ /*campo CEP nas pags. cadastro e cadastro adotante*/
-  color:blue;font-size:1.0em;text-decoration:none;
-}
-.campTermos{ /* link termos nas pags. cadastro e cadastro adotante*/
-  color:blue;font-weight:bold;text-decoration:none;
-}
-.cor2{ /*label do file nos cadastros*/
-  font-size:1.2em;
-}
-p.paragrafos2{ /*p de titulos de pags de cadastros*/
-  font-size: 1.8em;
-  color: #00BFFF;
-}
-p.paragrafos3{ /*p da div excluir pet de pags de perfil*/
-  font-size: 1.5em;
-  color: black;
-}
-.pCad{ /*p de titulo pag de cadastro*/
-  font-size: 1.4em;
-}
-.pCont{  /*p de titulo pag de contato*/
-  color:  #1E90FF;
-  font-size: 1.8em;
-}
-.infoCont{ /*label de info na pag de contato*/
-  font-size:1.0em;
-}
-.pTitulo{/*paragrafo titulo pag. galeria*/
-  font-size: 1.8em;color: #4169E1;
-}
-.imgPetGal{/*img do pet na pag. galeria*/
-  width:365px;max-height: 407px;
-}
-.tableGal{/*tabela com os dados do pet galeria*/
-  max-width:100%;font-size:1.3em;
-}
-.verMais{/*campo ver mais da pag. galeria*/
-  font-size:0.9em;color:#808080;  
-}
-.divHorizontal{ /*div utilizadas no inicio ou no fim de pags*/
-  clear:both;width:97.25722758%;
-}
-.petSize{ /* imgs do pet na pag pet*/
-  border:2px solid black; height: auto;
-}
-.pCap{ /* nome maiusculo na pag pet*/
-  text-transform: capitalize;
-}
-
- .lbDet{ /* label detalhes na pag. pet*/
-  max-width:30%; wordwrap: break-word;
- }
- .trcLi1{ /* li1 da trocaDiv na pag. perfil*/ 
-  background-color: #1E90FF;border:1px solid #1E90FF;
- }
- .trcLi2{  /* li2 da trocaDiv na pag. perfil*/ 
-  background-color: #0000CD; border:1px solid #0000CD;
- }
- .contMsgs{ /* contagem das msgs na aba da pag. de perfil*/
-  background-color: white;border-radius: 50%;border: 1px solid #0000CD;font-size: 1.1em;color: #0000CD;
- }
- .cor3{ /* cor placeholder no perfil*/
-  color:#708090;
- }
- .tbEd{
-  max-width: 100%;
- }
- .mens{ /* href do link da caixa de entrada pag. mensagem*/
-  padding-left:20px;
- }
-  /* utilizado nos slides das imgs na pag. pet*/
-  .slide-wrapper {
-    width: 2500px;
-    -webkit-animation: slide 9s ease infinite;
-  }
-  .slide-wrapper:hover { 
-    animation-play-state: paused;
-  }
-  .slide {
-    float: left;
-    width: 20%;   
-  } 
-  @-webkit-keyframes slide {
-    10% {margin-left: 0px;}
-    20% {margin-left: -500px;}
-    30% {margin-left: -500px;}
-    40% {margin-left: -1000px;}
-    50% {margin-left: -1000px;}
-    60% {margin-left: -1500px;}
-    70% {margin-left: -1500px;}
-    80% {margin-left: -2000px;}
-    90% {margin-left: -2000px;}
-  }
-/* --------------------------------------------*/
 .tam{ /* width dos campos de cadatrar novo pet*/
     width: 100%;
  }
-/* ---------Para adaptar o site em diferentes telas e aplicar os estilos de CSS para cada uma ------------*/
 
-/*table{display:block; width:auto; overflow-x: auto; white-space: nowrap;} COLOCAR NAS MEDIAS QUERIES*/
-img, figure, video, picture {
-  max-width: 100%;
-}
-
-*, *:before, *:after { /* com isso os elementos terão apenas a altura e a largura determinadas*/
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-/* adiciona espaco antes e depois dos elementos e evita a aglomeracao dos floats*/
-.clearfix:before,
-.clearfix:after {
-    content: " "; 
-    display: table; 
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-/* ---------------------------------------------------------------------------- */
- 
-/* ------------------------------Medias Queries -------------------------------------------------------*/
- /* media 1 */
+ /* media 1  green*/
  @media only screen and (min-width:1350px){
+  .logo{border:1px solid green;}
   .container{
      margin: auto;  
   } 
@@ -1233,10 +1371,28 @@ img, figure, video, picture {
     margin-left: 1%;
     margin-right: 0;
     max-width: 80%;
-  }   
- 
+  }
+/* para esconder o modal do bt entrar nesta media */
+  #boxes1 {display:none;}
+  #boxes1 #log #login{display: none}
+  #boxes1 #log{display: none}
+  #log #login {display: none}
+  #mask{display: none;}
+/* -----------------------------------------------*/
 }
-/* media 2 */
+/*   ------ Media nova -------------------------------------------- */
+ @media only screen and (min-width: 1301px) and (max-width:1350px){
+   /* para esconder o modal do bt entrar nesta media */
+  #boxes1 {display:none;}
+  #boxes1 #log #login{display: none}
+  #boxes1 #log{display: none}
+  #log #login {display: none}
+  #mask{display: none;}
+  /* -----------------------------------------------*/
+ .logo{border:1px solid black;}
+
+}
+/* media 2  yellow ---------------------------------------------------------- */
 @media only screen and (min-width: 1242px) and (max-width: 1300px)  {
     
   .ads{
@@ -1256,6 +1412,9 @@ img, figure, video, picture {
     float: left;
     padding-left: 15%;
   }
+  .logo{
+    border: 1px solid yellow;
+  }
   p.eco{
     max-width: 100%;
   }
@@ -1263,12 +1422,20 @@ img, figure, video, picture {
      max-width: 75%;
      margin-right: 0;
      margin-left:0;
-  }
+    }
   .tam{ /* width dos campos de cadatrar novo pet*/
     width: 100%;
-   } 
+   }
+/* para esconder o modal do bt entrar nesta media */
+  #boxes1 {display:none;}
+  #boxes1 #log #login{display: none}
+  #boxes1 #log{display: none}
+  #log #login {display: none}
+  #mask{display: none;}
+/* -----------------------------------------------*/
     
 } 
+/* media 3 purple ----------------------------------------------------*/
 @media only screen and (max-width: 1242px) and (min-width: 1149px)  {
   .ads{
     float: left;
@@ -1287,6 +1454,10 @@ img, figure, video, picture {
     float: left;
     padding-left: 15%;
   }
+
+  .logo{
+    border: 1px solid purple;
+  }
   .dLeft {
     min-width: 70%;
     margin-left: 8.5%;
@@ -1304,13 +1475,20 @@ img, figure, video, picture {
      max-width: 70%;
      margin-right: 0;
      margin-left:0;
-  }
-  .tam{ /* width dos campos de cadatrar novo pet*/
+    }
+    .tam{ /* width dos campos de cadatrar novo pet*/
     width: 90%;
-  }
+    }
+/* para esconder o modal do bt entrar nesta media */
+  #boxes1 {display:none;}
+  #boxes1 #log #login{display: none}
+  #boxes1 #log{display: none}
+  #log #login {display: none}
+  #mask{display: none;}
+/* -----------------------------------------------*/
   
 } 
-/* media 3 */
+/* media 4  gray -----------------------------------------------------*/
 @media only screen and (min-width: 990px) and (max-width: 1150px)  {
    .conteudo{
     padding-left: 0%; 
@@ -1346,6 +1524,9 @@ img, figure, video, picture {
   .ads2{
     float: right;
   }
+  .logo{
+    border: 1px solid gray;
+  }
   .dLeft { /* div esquerda do perfil usuario da pag. perfil */
     min-width: 80%;
     margin-left: 8%;
@@ -1368,12 +1549,23 @@ img, figure, video, picture {
   .tam{ /* width dos campos de cadatrar novo pet*/
      width: 90%;
   }
- }  
+  p.llogin{ min-width: 60%;} /* p dos links nao possuo cad. e esqueci senha */
 
- /* media 4 */     
+/* para esconder o modal do bt entrar nesta media */
+  #boxes1 {display:none;}
+  #boxes1 #log #login{display: none}
+  #boxes1 #log{display: none}
+  #log #login {display: none}
+  #mask{display: none;}
+/* -----------------------------------------------*/
+
+}  
+
+ /* media 5 red -------------------------------------------------------------------------*/     
 @media only screen and (min-width:780px) and (max-width: 990px) and (orientation:landscape) {
+   
    .divdir2{
-    float: left;
+    float: left;;
     margin-left: 27%;
    }
    .ads{
@@ -1390,7 +1582,7 @@ img, figure, video, picture {
     margin-left: 15%;
     float:left;
     margin-top: 1%;
-    }
+   } 
    .divdir{
     min-width:80%;
     margin-right: 3%;
@@ -1401,13 +1593,14 @@ img, figure, video, picture {
    .fotos{
      margin-left:0;
      margin-right: 180px;
-    }
+    } 
     .fotos1{ /* figure img pet na pag. pet*/
      max-width: 70%;
      margin-right: 0;
      margin-left:18%;
     }
-   .divdoar{  /* div do botoes doar e adotar da p. index*/
+    
+    .divdoar{  /* div do botoes doar e adotar da p. index*/
      float: right;
      max-width:50%;
      padding-right: 6%;
@@ -1494,6 +1687,7 @@ img, figure, video, picture {
     width:20%; /* 199/1200*/
     margin-top:2px;
     padding-left: 0;
+    border: 1px solid red;
    }
    .tabGal{
    float:left;
@@ -1513,7 +1707,7 @@ img, figure, video, picture {
    }
    p.llogin{
     float:right;
-    min-width: 55%;
+    min-width: 67%; text-align: left;font-size: 1em;
    }
    p.llogin2{
     min-width: 33%;
@@ -1521,9 +1715,10 @@ img, figure, video, picture {
    .inpsize{
     max-width:33%;
    }
+   /* retirado  pois estava dando alterar nos links do nav 17-03-20
    .divlogin{
     height:100px;
-   }
+   }*/
     /* area  pesquisar da pag. Galeria*/
   .pesquisa{
     float: left;
@@ -1545,9 +1740,19 @@ img, figure, video, picture {
   .divGaleria{ /*div com img e table do pet na pag. Galeria  */
     margin-left: 25%;
   }
+/* para esconder o modal do bt entrar nesta media */
+  #boxes1 {display:none;}
+  #boxes1 #log #login{display: none}
+  #boxes1 #log{display: none}
+  #log #login {display: none}
+  #mask{display: none;}
+/* -----------------------------------------------*/
 }   
-/* media 5 */
+/*     media 5 white  -------------------------------------------------------*/
 @media only screen and (min-width:720px) and (max-width:780px) {
+  .MLogUs{
+    display: none;
+   }
   .divdir2{
     float: left;
     min-width: 100%;
@@ -1581,7 +1786,7 @@ img, figure, video, picture {
     .fotos1{ /* figure img pet na pag. pet*/
      max-width:75%;
      margin:0 0;
-    } 
+    }
     .divdoar{  /* div do botoes doar e adotar da p. index*/
       float: right;
       max-width:50%;
@@ -1671,9 +1876,10 @@ img, figure, video, picture {
      margin-top: 5%;
     }
    .logo{
-    width:20%; /* 199/1200*/
+    width: 18%; /* 199/1200*/
     margin-top:2px;
     padding-left: 0;
+    border: 1px solid white;
    }
    .tabGal{
     padding-right: 50px;
@@ -1687,7 +1893,7 @@ img, figure, video, picture {
    }
    #btlogin{
     width:17%;
-    padding: 15px;
+    //padding: 15px;
     font-size: 1.1em;
    }
    #senha{
@@ -1703,7 +1909,7 @@ img, figure, video, picture {
     max-width:33%;
    }
    .divlogin{
-    height:100px;
+    height:90px;
    }
    /* area  pesquisar da pag. Galeria*/
   .pesquisa{
@@ -1723,10 +1929,17 @@ img, figure, video, picture {
     margin-left: 0;
     margin-right: 1.5%;
   }
-
+  
+/* para esconder o modal do bt entrar nesta media */
+  #boxes1 {display:none;}
+  #boxes1 #log #login{display: none}
+  #boxes1 #log{display: none}
+  #log #login {display: none}
+  #mask{display: none;}
+/* -----------------------------------------------*/
 }
 
-/* media 6 */
+/* media 6 pink--------------------------------------------------------------------------*/
 @media only screen and (min-width: 480px) and (max-width:720px) {
    .divdir2{
     float: left;
@@ -1780,7 +1993,7 @@ img, figure, video, picture {
     .fotos1{ /* figure img pet na pag. pet*/
      max-width:70%;
      margin:0 0;
-    }
+   }
     .divdoar{  /* div do botoes doar e adotar da p. index*/
       float: right;
       max-width:50%;
@@ -1855,23 +2068,31 @@ img, figure, video, picture {
     width:20%; /* 199/1200*/
     margin-top:10px;
     padding-left: 0;
+    border: 1px solid pink;
    }
    .acesso{
     width:40%;
     padding-top: 0;
    }
+   #footer{
+    height: 65px;
+   }
+   #header{
+    height: 87px;
+   }
    #btlogin{
-    width:17%;
+    width: 20%;
     padding: 15px;
     font-size: 1.1em;
+    margin-top: 6px; text-decoration: none;padding: 3.5% 5.5%;
    }
    #senha{
     font-size:1.1em;
     align:center;
    }
    p.llogin{
-    float:right;
-    min-width:67%;
+    float: right;
+    min-width: 80%;
    }
    .inpsize{
     max-width:34%;
@@ -1900,10 +2121,83 @@ img, figure, video, picture {
   .divGaleria{ /*div com img e table do pet na pag. Galeria  */
     margin-left: 17%;
   }
+  /* Estilos utilizados no menu hamburguer ------------ */
+  .MLogUs{ /* exibe o nome do usuario logado no header */
+    float:right;max-width:88%;
+  }
+  .pOla{
+    font-size: 1.4em;padding-top: 6px;
+    /* abrevia o nome do usuario no header */
+    max-width: 30ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .llog{float: right; text-decoration: none;}
+  /* estilo dos links do menu hamb */
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  /* ---------------------------- */
+   #divMen { /* para exibicao ou nao do menu hamb */
+    display: block; 
+    padding-left: 2%;padding-top: 15px
+   }
+   #divlogin{ /* esconde a div e form de login do header nesta media */
+    display: none;
+   }
+   #mainNav{ /* esconde links do header e footer nesta media */
+    display: none;
+   }
+   .spanMenu{ /* span que exibe o menu hamb */
+    font-size: 3em;cursor:pointer;
+   }
+  /* ------------------------------------------------------------- */ 
+  #boxes { display: none; }
+/* Estilos utilizados nos modais bt entrar do header */  
+ #boxes1 #log{ /* div com o form de login do modal */
+  min-width: 100%;
+  margin: auto;
+  margin-top:10px;
+ }
+ #log #login{
+  margin:auto;
+  min-width:70%;
+  display: block;
+ }
+ #mask {
+   height: 100%;
+   min-width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #6495ED;/*  */
+    overflow-x: hidden;
+    transition: 0.5s;
+    /*padding-top: 60px; */
+    display: none;
+ }
+
+#boxes1 .window {
+  position:absolute;
+  left:0;
+  top:0;
+  /*min-width: 30%; */
+  max-width: 50%;
+  height: 305px;
+  display:none;
+  z-index: 19;
+  /*padding:20px; */
+}
+#log{
+background-color: aliceblue;border-radius: 8px;font-size:1.2em;
+}
+/* -------------------------------------------------------------------- */
 }
 
-/* media 7 */
+/*                    media 7 black ----------------------------------------------------------*/
 @media screen and (max-width: 480px) , (orientation: portrait) {
+
    .divdir2{
     float: left;
     min-width: 100%;
@@ -1916,7 +2210,7 @@ img, figure, video, picture {
     float: left;
    }
    .geral{
-     height:auto;
+    min-height: 600px;
    }
    .ad{
     float:left;
@@ -1939,6 +2233,13 @@ img, figure, video, picture {
      font-size: 0.9em;
      height: auto;
     }
+    .slide{ /* div com a ft pet nos slides na pag. pet*/
+     width: 20%;
+    }
+    .petSize{
+      max-width: 53%;
+    }
+    
     /* utilizado na div que contem o perfil do pet na pag. perfil/mensagem*/
     #perfil, #mensagem{
      min-width: 100%;
@@ -2042,6 +2343,7 @@ img, figure, video, picture {
       margin-left: 1px 1px;
     }
     .d{
+      //text-align: left;
       font-size: 0.83em;
     }
     .imgsPerfil{
@@ -2139,16 +2441,13 @@ img, figure, video, picture {
     color:#808080;
     padding: 0px 0px;
    }
-   footer nav ul li a{
-    font-size: 1.6em;
-    color: white;
-    text-decoration: none;
-   }
+  
     /* utilizado no login header*/
    .logo{
     width:25%; /* 199/1200*/
     margin-top:16px;
     padding-left: 0;
+    border: 1px solid black;
    }
    .acesso{
     width:40%;
@@ -2158,7 +2457,8 @@ img, figure, video, picture {
    #btlogin{
     max-width:21%;
     padding: 15px 4px;
-    font-size: 0.9em;
+    font-size: 1em;
+    margin-top: 6px; text-decoration: none;padding: 3.5% 4.5%;
    }
    #senha{
     font-size:1.25em;
@@ -2178,12 +2478,16 @@ img, figure, video, picture {
     height:100px;
     width:100%;
    }
+   #footer{
+    height: 65px;
+   }
    #header{
-    height:170px;
+    height: 93px;
+    
    }
    #headernav ul li{
     margin-right: 30px;
-  }
+   }
    #headernav nav ul li a{
     font-size: 1.6em;
     color: white;
@@ -2214,5 +2518,80 @@ img, figure, video, picture {
     margin-left: 4%;
     float: left;
   }
- 
+
+  /* Estilos utilizados no menu hamburguer ------------ */
+
+  .MLogUs{ /* exibe o nome do usuario logado no header */
+    float:right;max-width:88%;
+  }
+  .pOla{
+    font-size: 1.4em;padding-top: 6px;
+    max-width: 30ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .llog{float: right; text-decoration: none;}
+  /* estilo dos links do menu hamb */
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  /* ---------------------------- */
+   #divMen { /* para exibicao ou nao do menu hamb */
+    display: block; 
+    padding-left: 2%;padding-top: 15px;
+   }
+   #divlogin{ /* esconde div e form de login do header nesta media */
+    display: none;
+   }
+   #mainNav{ /* esconde links do header e footer nesta media */
+    display: none;
+   }
+   .spanMenu{
+    font-size: 3em;cursor:pointer;
+   }
+/* ------------------------------------------------------------- */ 
+#boxes { display: none; }
+/* Estilos utilizados nos modais bt entrar do header */ 
+  #boxes1 #log{ /* div com o form de login do modal */
+  min-width: 100%;
+  margin: auto;
+  margin-top:10px;
+ }
+ #log #login{
+  margin:auto;
+  min-width:50%;
+  display: block;
+ }
+ #log .recsenha{
+  width: 95%;
+ }
+ #mask {
+   min-width: 100%;
+   height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #6495ED;
+    overflow-x: hidden;
+    transition: 0.5s;
+    /*padding-top: 60px;*/
+    display: none;
+ }
+
+#boxes1 .window {
+  position:absolute;
+  left:0;
+  top:0;
+  min-width: 100%;
+  height: 300px;
+  display:none;
+  z-index:1999;
+  /*padding:20px;*/
+}
+#log{
+  background-color: aliceblue;border-radius: 8px;font-size:1.2em;
+}
+/* ----------------------------------------------------------------------- */   
 }
