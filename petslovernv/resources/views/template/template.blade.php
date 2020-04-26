@@ -91,11 +91,11 @@ function closeNav() {
 		    <div class="MLogUs">  
                      <p align="right" class="pOla">Olá</p>                        
                      <p align="right">
-                         <a href="logout.php" id="senha" class="linkOut" tabindex="2">SAIR</a>
+                         <a href="/logout" id="senha" class="linkOut" tabindex="2">SAIR</a>
                      </p>
                     </div>       
                   @else
-                      <div class="divlogin" id="divlogin">
+                     <div class="divlogin" id="divlogin">
                        <form id="login" name="login" method="POST" action="/logar">
                         {{csrf_field()}} 
                               <p align="right">
@@ -147,7 +147,7 @@ function closeNav() {
       <div id="mySidenav" class="sidenav">
           
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="index.php" style="padding-left: 14px"><img src="{{ asset('image/logo.png') }}" ></a>
+          <a href="/" style="padding-left: 14px"><img src="{{ asset('image/logo.png') }}" ></a>
           <br>
           <nav id="headernav">
           <ul style="padding-left: 20px">
@@ -177,7 +177,7 @@ function closeNav() {
  
   <div id="boxes1" >
      <div id="log" class="window">
-       <form id="login" name="login" method="POST" action="verifica_login.php">
+       <form id="login" name="login" method="POST" action="/logar">
            
             <br> <a href="#" class="close" style="">X &nbsp;&nbsp;</a> 
                
@@ -190,7 +190,7 @@ function closeNav() {
                       <br>
                                
                       <p align="center" style="margin:auto">
-                          <a href="form_recuperar_senha.php" id="mLog" tabindex="4">  Esqueci a Senha</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="form_recuperar_senha" id="mLog" tabindex="4">  Esqueci a Senha</a>&nbsp;&nbsp;&nbsp;&nbsp;
                           <a href="cadastro.php" id="mLog" tabindex="5">  N&atilde;o Possuo Cadastro</a>
                       </p><br>
                       <div id="hidden"></div>
