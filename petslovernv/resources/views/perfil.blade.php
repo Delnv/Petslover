@@ -337,14 +337,17 @@
 
        <!-- inicio divdir mensagem -->
        <div id="mensagem" class="divdir bordaPerfil abasDivs" style="display:none;"><br>
-
+<!-- ==============================Testando msgs=============================== -->  
         <h3 align="center">CAIXA DE ENTRADA</h3></br>
         <form action="/editar-mensagem" method='POST'  name='perfil' enctype="multipart/form-data" onsubmit="return btCadastrar()">
            {{csrf_field()}}
           <div id="mens-group">
-                @if <!-- SE O NUMERO DE MSGS RECEBIDAS FOR(<= 0) -->{
+           <p align="center"> <input type="submit" id="excluir" name="excAll" value="Excluir Selecionadas" class="btsMsgs"/></p>
+            <!--<input type="submit" id="spam" name="spam" value="Denunciar Abuso"/>--><br><br>
+          </div> 
+               <!--   @if SE O NUMERO DE MSGS RECEBIDAS FOR(<= 0){ -->
                     Caixa de mensagens vazia </br>                
-                @else
+               <!-- @else -->
                 <!-- SE HOUVER MSGS:
                 $i = 0;
                 while ($linha = mysqli_fetch_assoc($result)) {
@@ -383,7 +386,43 @@
                 </div> <!-- fim div msgDestinatario-->   
 
          </div> <!-- fim msgRecebida-->
-         </form> <br>
+         
+         <div class="mens-itself" style="min-width:40%">
+                  
+                <input type="checkbox" id="check" name="checkm[]" value="">
+                <button id="lixeira" class="btsMsgs" name="excluir" value="">Excluir</button>
+                <a href="#" onclick="toggle('msgRecebida2');" class="mens" name="mensagem" value="{{$usuario->cdUsuario}}">
+                  {{$usuario->nmUsuario}}  Nome do adotante aqui
+                </a>
+          </div>  
+
+         <div id="msgRecebida2" align="center" style="display:none">
+            <br>
+            
+              <div  class="imgRemetente">
+               <img src="{{asset($usuario->imgUsuario)}}" class="imgsMsgs" id="foto">
+              </div>
+              
+              <div id="infoMsgRec">
+               <span class="campos3 usuarioRemt">Daniele Szabatura da Conceição Vieira Lima Martins Felisbino <!-- {{$usuario->nmUsuario}} --></span><br>
+               <button id="btexcluir" name="excluir" style="min-width:20%;" value="{{$mensagem->cdMensagem}}">Excluir Mensagem</button> <br><br>
+              
+               <br>
+                <p class="areaPet espMargins"> {{$mensagem->dsMensagem}} </p>
+                <br><hr class="lineMsg">
+                </div><!-- fim div infoMsgRec-->
+              
+                <div id="msgDestinatario" >       
+                   <br>
+                   <textarea autofocus style="background-color: #E0FFFF;min-width: 80%;" class="areaPet" name="ads" rows="4" cols="35" maxlength="800" placeholder="Digite aqui sua mensagem..." pattern="^[a-zA-Zà-úÀ-Ú0-9 -,./:;?!@()]+$" resize="none"  tabindex="51"></textarea>
+                    <br>
+                   <button align="right" id="env" name="enviar" tabindex="2" class="compartilhar" value="{{$pet->cdPet}}">Enviar</button>
+                </div> <!-- fim div msgDestinatario-->   
+
+          </div> <!-- fim divDialogoMsg-->
+         </form> 
+      <!-- ==========       Fim do testando msgs       ======= -->      
+         <br>
         <p class="avisoUsuario">
           <b>ATENÇÃO:</b> O PetsLover não fornece dados de seus usuários. A troca de informações neste espaço, como endereço, telefone , etc., ocorrerá por conta e risco do usuário. Aconselhamos não fornecer informações pessoais nos primeiros contatos. Utilize a segurança desta área de mensagens até a concretização da doação / adoção.
         </p>
