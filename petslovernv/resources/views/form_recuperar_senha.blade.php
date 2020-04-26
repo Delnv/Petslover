@@ -59,7 +59,7 @@
             $mailer->Subject	= 'Recuperação de Senha';
             $mailer->Body		= $mensagem;
             if(!$mailer->Send()){
-                    echo "<script> alert('Mensagem não enviada. Tente novamente.'); window.location.href='form_recuperar_senha.php';</script>";
+                    echo "<script> alert('Mensagem não enviada. Tente novamente.'); window.location.href='/form_recuperar_senha';</script>";
                     exit;
             }
             //print "E-mail enviado!";
@@ -73,7 +73,7 @@
           }
 
           else {
-              echo "<script> alert('Email não cadastrado. Tente novamente.'); window.location.href='form_recuperar_senha.php';</script>";
+              echo "<script> alert('Email não cadastrado. Tente novamente.'); window.location.href='/form_recuperar_senha';</script>";
     }
 
           exit();
@@ -89,7 +89,7 @@
 
 
               <!--<form method="post" enctype="multipart/form-data" action="http://scripts.hospedagemdesites.ws/scripts/formmail.pl"/>-->
-              <form method="post" enctype="multipart/form-data" action="form_recuperar_senha.php"/>
+              <form method="post" enctype="multipart/form-data" action="/form_recuperar_senha"/>
         <div class="conteudo">
           <div class="forms" style="min-width: 40.396341%; margin:auto;">
             <br><br>
