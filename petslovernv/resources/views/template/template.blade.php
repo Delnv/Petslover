@@ -152,20 +152,21 @@ function closeNav() {
           <nav id="headernav">
           <ul style="padding-left: 20px">
 	    @if(Session::has('usuario'))
-              <li><a href='/perfil'>Principal</a></li>
-              <li><a href="/galeria">Galeria</a></li>
-              <li><a href='/contato'>Fale Conosco</a></li>
-	      <li><a href="quem-somos">Quem Somos</a></li>
-	      <li><a href="termo-de-uso">Termos de Compromisso</a></li>
-	      <li><a href="perguntas-frequentes">Perguntas Frequentes</a></li>
+              <li><a href='/perfil'>Principal</a></li><br>
+              <li><a href="/galeria">Galeria</a></li><br>
+              <li><a href='/contato'>Fale Conosco</a></li><br>
+	      <li><a href="/quem-somos">Quem Somos</a></li><br>
+	      <li><a href="/termo-de-uso">Termos de Compromisso</a></li><br>
+	      <li><a href="/perguntas-frequentes">Perguntas Frequentes</a></li>
 	    @else   
-	      <li><a href='/'>Principal</a></li>
-              <li><a href='/galeria'>Galeria</a></li>
-              <li><a href='/cadastrar'>Cadastro</a></li>
-              <li><a href='/contato'>Fale Conosco</a></li>
-	      <li><a href="quem-somos">Quem Somos</a></li>
-	      <li><a href="termo-de-uso">Termos de Compromisso</a></li>
-	      <li><a href="perguntas-frequentes">Perguntas Frequentes</a></li>
+	      <li><a href='/'>Principal</a></li><br>
+              <li><a href='/galeria'>Galeria</a></li><br>
+              <li><a href='/cadastrar'>Cadastro</a></li><br>
+              <li><a href='/contato'>Fale Conosco</a></li><br>
+	      <li><a href="/quem-somos">Quem Somos</a></li><br>
+	      <li><a href="/termo-de-uso">Termos de Compromisso</a></li><br>
+	      <li><a href="/perguntas-frequentes">Perguntas Frequentes</a></li>
+	    @endif    
 	  </ul>
           </nav>
         </div>
@@ -190,8 +191,8 @@ function closeNav() {
                       <br>
                                
                       <p align="center" style="margin:auto">
-                          <a href="form_recuperar_senha" id="mLog" tabindex="4">  Esqueci a Senha</a>&nbsp;&nbsp;&nbsp;&nbsp;
-                          <a href="cadastro.php" id="mLog" tabindex="5">  N&atilde;o Possuo Cadastro</a>
+                          <a href="/form_recuperar_senha" id="mLog" tabindex="4">  Esqueci a Senha</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="/cadastrar" id="mLog" tabindex="5">  N&atilde;o Possuo Cadastro</a>
                       </p><br>
                       <div id="hidden"></div>
        </form>
@@ -209,8 +210,8 @@ function closeNav() {
      <div id="dialog" class="window trocaDiv linksModal">
        <br> <a href="#" class="close">X &nbsp;&nbsp;</a> 
        <ul>
-        <li class="li1Modal"><a href="cadastrar" onclick="this.value=''"> Quero Doar </a></li> 
-        <li class="li2Modal"><a href="cadastrar-adotante" onclick="this.value=''"> Quero Adotar </a></li> 
+        <li class="li1Modal"><a href="/cadastrar" onclick="this.value=''"> Quero Doar </a></li> 
+        <li class="li2Modal"><a href="/cadastrar-adotante" onclick="this.value=''"> Quero Adotar </a></li> 
        </ul>  
      </div>
 </div>
@@ -224,9 +225,9 @@ function closeNav() {
 	     <nav id="footernav">
 	    	<div align="center">
 	  			<ul id="mainNav">
-	  		          <li><a href="quem-somos">Quem Somos</a></li>
-	  		          <li><a href="termo-de-uso">Termos de Compromisso</a></li>
-	  		          <li><a href="perguntas-frequentes">Perguntas Frequentes</a></li>
+	  		          <li><a href="/quem-somos">Quem Somos</a></li>
+	  		          <li><a href="/termo-de-uso">Termos de Compromisso</a></li>
+	  		          <li><a href="/perguntas-frequentes">Perguntas Frequentes</a></li>
 	  		 	</ul><br>
 	       	  <p align="center" class="sAssinatura">&copy; 2016 Pet's Lover - Todos os direitos reservados.</p>
 	       
